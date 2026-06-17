@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for The Holy Quran: Indexed by Arfhause.">
+    <title>Privacy Policy | The Holy Quran: Indexed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            background:
+                radial-gradient(circle at 82% 0%, rgba(99, 102, 241, 0.18), transparent 34rem),
+                linear-gradient(180deg, #101010 0%, var(--black) 36rem);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .nav {
+            width: min(1120px, calc(100% - 3rem));
+            margin: 0 auto;
+            padding: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand {
+            font-family: "Syne", system-ui, sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        main {
+            width: min(1120px, calc(100% - 3rem));
+            margin: 0 auto;
+            padding: 5rem 0 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            max-width: 860px;
+            padding-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-family: "Syne", system-ui, sans-serif;
+            font-size: clamp(2.75rem, 7vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            max-width: 720px;
+            color: var(--gray-300);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 2rem 0 0;
+        }
+
+        .meta-card {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 1.1rem;
+        }
+
+        .meta-label {
+            display: block;
+            color: var(--gray-500);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+
+        .meta-value {
+            color: var(--gray-100);
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .toc {
+            position: sticky;
+            top: 1.5rem;
+            border-left: 1px solid var(--gray-800);
+            padding-left: 1rem;
+        }
+
+        .toc a {
+            display: block;
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 0.35rem 0;
+            transition: color 0.2s ease;
+        }
+
+        .toc a:hover {
+            color: var(--white);
+        }
+
+        .policy {
+            max-width: 760px;
+        }
+
+        .policy section {
+            padding: 0 0 3rem;
+            margin: 0 0 3rem;
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .policy section:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .policy h2 {
+            font-family: "Syne", system-ui, sans-serif;
+            font-size: clamp(1.55rem, 3vw, 2.25rem);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .policy h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .policy p,
+        .policy li {
+            color: var(--gray-300);
+            font-size: 1rem;
+        }
+
+        .policy p + p,
+        .policy ul + p,
+        .policy p + ul {
+            margin-top: 1rem;
+        }
+
+        .policy ul {
+            padding-left: 1.2rem;
+        }
+
+        .policy li + li {
+            margin-top: 0.5rem;
+        }
+
+        .policy a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .policy a:hover {
+            text-decoration: underline;
+        }
+
+        .notice {
+            border: 1px solid rgba(129, 140, 248, 0.28);
+            background: rgba(99, 102, 241, 0.09);
+            padding: 1.25rem;
+            margin: 1.5rem 0 0;
+            color: var(--gray-300);
+        }
+
+        .footer {
+            width: min(1120px, calc(100% - 3rem));
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer a {
+            color: var(--gray-300);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 860px) {
+            .nav,
+            main,
+            .footer {
+                width: min(100% - 2rem, 1120px);
+            }
+
+            .nav {
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .nav-links,
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            main {
+                padding-top: 3.5rem;
+            }
+
+            .meta-grid,
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.15rem 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .toc {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%236366f1' rx='12' width='100' height='100'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='60' font-weight='800' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html" class="brand">Arfhause</a>
+        <div class="nav-links">
+            <a href="index.html#research" class="nav-link">Research</a>
+            <a href="index.html#projects" class="nav-link">Work</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <h1>Privacy Policy</h1>
+            <p>
+                This Privacy Policy explains how Arfhause handles information for
+                <strong>The Holy Quran: Indexed</strong>, a mobile application published under
+                package name <strong>com.arfhause.holyquran.indexed</strong>.
+            </p>
+
+            <div class="meta-grid" aria-label="Policy summary">
+                <div class="meta-card">
+                    <span class="meta-label">App</span>
+                    <span class="meta-value">The Holy Quran: Indexed</span>
+                </div>
+                <div class="meta-card">
+                    <span class="meta-label">Developer</span>
+                    <span class="meta-value">Arfhause</span>
+                </div>
+                <div class="meta-card">
+                    <span class="meta-label">Last Updated</span>
+                    <span class="meta-value">June 17, 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <aside class="toc" aria-label="Privacy Policy sections">
+                <a href="#overview">Overview</a>
+                <a href="#information">Information We Handle</a>
+                <a href="#use">How Information Is Used</a>
+                <a href="#sharing">Sharing and Third Parties</a>
+                <a href="#security">Security</a>
+                <a href="#retention">Retention and Deletion</a>
+                <a href="#children">Children</a>
+                <a href="#changes">Changes</a>
+                <a href="#contact">Contact</a>
+            </aside>
+
+            <article class="policy">
+                <section id="overview">
+                    <h2>Overview</h2>
+                    <p>
+                        The Holy Quran: Indexed is provided by Arfhause. The app is designed to help
+                        users read, search, and navigate Quran content. We aim to collect only the
+                        information that is necessary to provide and improve the app.
+                    </p>
+                    <p>
+                        This policy is the governing privacy policy for The Holy Quran: Indexed and
+                        applies to the app, its related services, and support requests sent to Arfhause.
+                    </p>
+                </section>
+
+                <section id="information">
+                    <h2>Information We Handle</h2>
+                    <p>
+                        The app does not require users to create an account, and Arfhause does not ask
+                        users to provide a name, email address, precise location, contacts, photos,
+                        microphone recordings, payment information, or government identifiers in order to
+                        use the app.
+                    </p>
+                    <h3>Information stored on your device</h3>
+                    <p>
+                        App preferences, reading progress, bookmarks, favorites, notes, search history,
+                        or similar app settings may be stored locally on your device when you use features
+                        that need them. This information is used to provide the app experience and is not
+                        sold by Arfhause.
+                    </p>
+                    <h3>Automatically processed technical information</h3>
+                    <p>
+                        Depending on your device, operating system, and distribution channel, limited
+                        technical information may be processed to operate, secure, diagnose, or improve
+                        the app. This may include device type, operating system version, app version,
+                        language settings, crash logs, performance information, approximate region derived
+                        from network information, and similar diagnostic data.
+                    </p>
+                    <div class="notice">
+                        If the app uses any third-party analytics, crash reporting, advertising, or cloud
+                        service in a future version, this policy and the Google Play Data safety section
+                        should be updated so they remain accurate and consistent.
+                    </div>
+                </section>
+
+                <section id="use">
+                    <h2>How Information Is Used</h2>
+                    <p>Information handled by the app is used for the following purposes:</p>
+                    <ul>
+                        <li>Providing Quran reading, search, indexing, navigation, and personalization features.</li>
+                        <li>Saving local preferences such as bookmarks, progress, or display settings.</li>
+                        <li>Maintaining app reliability, diagnosing crashes, and improving performance.</li>
+                        <li>Responding to user support, privacy, or deletion requests.</li>
+                        <li>Complying with legal obligations and protecting the app, users, and developer account.</li>
+                    </ul>
+                </section>
+
+                <section id="sharing">
+                    <h2>Sharing and Third Parties</h2>
+                    <p>
+                        Arfhause does not sell personal or sensitive user data. We may share limited
+                        information only when necessary to operate the app, comply with law, protect rights
+                        and safety, or work with trusted service providers that help deliver app services.
+                    </p>
+                    <p>
+                        Some app distribution, security, crash reporting, analytics, or platform services
+                        may be provided by third parties such as Google Play services. Their handling of
+                        information is governed by their own terms and privacy policies.
+                    </p>
+                </section>
+
+                <section id="security">
+                    <h2>Security</h2>
+                    <p>
+                        We use reasonable administrative and technical measures to protect information
+                        handled by the app. Where information is transmitted over a network by the app or
+                        supporting services, it should be transmitted using modern secure transport such as
+                        HTTPS.
+                    </p>
+                    <p>
+                        No method of transmission or storage is completely secure. We cannot guarantee
+                        absolute security, but we work to reduce risk and limit information handling to
+                        appropriate app and service purposes.
+                    </p>
+                </section>
+
+                <section id="retention">
+                    <h2>Data Retention and Deletion</h2>
+                    <p>
+                        Information stored locally on your device remains there until you delete it inside
+                        the app, clear the app data, or uninstall the app. Support requests and related
+                        correspondence may be retained for as long as needed to respond, maintain records,
+                        resolve disputes, or comply with legal obligations.
+                    </p>
+                    <p>
+                        To request deletion of information associated with a support request, contact us at
+                        <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>. If the app later offers
+                        account creation or cloud sync, we will provide an account deletion method and update
+                        this policy accordingly.
+                    </p>
+                </section>
+
+                <section id="children">
+                    <h2>Children</h2>
+                    <p>
+                        The app is intended for a general audience. Arfhause does not knowingly request or
+                        collect personal information from children. If you believe a child has provided
+                        personal information through a support channel, contact us so we can review and
+                        delete it where appropriate.
+                    </p>
+                </section>
+
+                <section id="changes">
+                    <h2>Changes to This Policy</h2>
+                    <p>
+                        We may update this Privacy Policy from time to time. When we make changes, we will
+                        update the "Last Updated" date on this page. Continued use of the app after an
+                        update means the revised policy applies from that date onward.
+                    </p>
+                </section>
+
+                <section id="contact">
+                    <h2>Contact</h2>
+                    <p>
+                        If you have questions, privacy requests, or concerns about this policy, contact
+                        Arfhause at <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>.
+                    </p>
+                    <p>
+                        Website: <a href="https://arfhause.com">https://arfhause.com</a>
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>&copy; 2026 Arfhause. All rights reserved.</span>
+        <a href="index.html">Back to Arfhause</a>
+    </footer>
+</body>
+</html>
