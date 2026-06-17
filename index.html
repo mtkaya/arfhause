@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arfhause - Premium mobile development and AI solutions studio">
-    <title>Arfhause — Intelligent Mobile Experiences</title>
+    <title>Arfhause — Mobil & Yapay Zekâ Stüdyosu</title>
+    <meta name="description" content="Arfhause — mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu. Mobile development and AI solutions studio.">
+    <meta name="keywords" content="mobil uygulama, yapay zeka, yazılım stüdyosu, mobile development, AI, machine learning, .NET, React Native, Arfhause">
+    <meta name="author" content="Arfhause">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://arfhause.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arfhause">
+    <meta property="og:title" content="Arfhause — Mobil & Yapay Zekâ Stüdyosu">
+    <meta property="og:description" content="Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.">
+    <meta property="og:url" content="https://arfhause.com/">
+    <meta property="og:image" content="https://arfhause.com/images/og-cover.png">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arfhause — Mobil & Yapay Zekâ Stüdyosu">
+    <meta name="twitter:description" content="Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.">
+    <meta name="twitter:image" content="https://arfhause.com/images/og-cover.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,7 +214,8 @@
             padding: 1.5rem 3rem;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 1.5rem;
             mix-blend-mode: difference;
         }
 
@@ -204,6 +226,7 @@
             letter-spacing: -0.02em;
             color: var(--white);
             text-decoration: none;
+            margin-right: auto;
         }
 
         .nav-menu {
@@ -1875,6 +1898,35 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Language toggle */
+        .lang-toggle {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 0.4rem 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--gray-400);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .lang-toggle:hover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        .lang-toggle .lang-sep { color: var(--gray-600); }
+        .lang-toggle .lang-opt { transition: color 0.25s ease; }
+        .lang-toggle[data-active="tr"] .lang-tr,
+        .lang-toggle[data-active="en"] .lang-en { color: var(--white); }
+        @media (max-width: 768px) {
+            .lang-toggle { padding: 0.35rem 0.7rem; font-size: 0.72rem; }
+        }
     </style>
 
     <!-- Favicon -->
@@ -1902,12 +1954,13 @@
     <nav class="nav">
         <a href="#" class="nav-logo magnetic">Arfhause</a>
         <div class="nav-menu">
-            <a href="#services" class="nav-link magnetic">Services</a>
-            <a href="#about" class="nav-link magnetic">About</a>
-            <a href="#research" class="nav-link magnetic">Research</a>
-            <a href="#projects" class="nav-link magnetic">Work</a>
-            <a href="#contact" class="nav-cta magnetic">Let's Talk</a>
+            <a href="#services" class="nav-link magnetic" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+            <a href="#about" class="nav-link magnetic" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+            <a href="#research" class="nav-link magnetic" data-tr="Araştırma" data-en="Research">Araştırma</a>
+            <a href="#projects" class="nav-link magnetic" data-tr="Projeler" data-en="Work">Projeler</a>
+            <a href="#contact" class="nav-cta magnetic" data-tr="İletişime Geç" data-en="Let's Talk">İletişime Geç</a>
         </div>
+        <button class="lang-toggle magnetic" id="lang-toggle" aria-label="Dil / Language" type="button" data-active="tr"><span class="lang-opt lang-tr">TR</span><span class="lang-sep">/</span><span class="lang-opt lang-en">EN</span></button>
         <button class="menu-toggle magnetic" id="menu-toggle" aria-label="Menu">
             <span></span>
             <span></span>
@@ -1916,11 +1969,11 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-        <a href="#services" class="mobile-menu-link">Services</a>
-        <a href="#about" class="mobile-menu-link">About</a>
-        <a href="#research" class="mobile-menu-link">Research</a>
-        <a href="#projects" class="mobile-menu-link">Work</a>
-        <a href="#contact" class="mobile-menu-link">Contact</a>
+        <a href="#services" class="mobile-menu-link" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+        <a href="#about" class="mobile-menu-link" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+        <a href="#research" class="mobile-menu-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+        <a href="#projects" class="mobile-menu-link" data-tr="Projeler" data-en="Work">Projeler</a>
+        <a href="#contact" class="mobile-menu-link" data-tr="İletişim" data-en="Contact">İletişim</a>
     </div>
 
     <!-- Hero Section -->
@@ -1937,22 +1990,22 @@
         <div class="hero-content">
             <div class="hero-eyebrow">
                 <div class="hero-eyebrow-line"></div>
-                <span>Mobile & AI Studio</span>
+                <span data-tr="Mobil & Yapay Zekâ Stüdyosu" data-en="Mobile & AI Studio">Mobil & Yapay Zekâ Stüdyosu</span>
             </div>
 
             <h1 class="hero-title">
-                <span class="line"><span class="line-inner">We craft</span></span>
-                <span class="line"><span class="line-inner highlight">intelligent</span></span>
-                <span class="line"><span class="line-inner">experiences.</span></span>
+                <span class="line"><span class="line-inner" data-tr="Akıllı" data-en="We craft">Akıllı</span></span>
+                <span class="line"><span class="line-inner highlight" data-tr="dijital" data-en="intelligent">dijital</span></span>
+                <span class="line"><span class="line-inner" data-tr="deneyimler." data-en="experiences.">deneyimler.</span></span>
             </h1>
 
             <div class="hero-bottom">
-                <p class="hero-description">
-                    A boutique software studio specializing in mobile development and artificial intelligence. We turn complex ideas into elegant, powerful applications.
+                <p class="hero-description" data-tr="Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu. Karmaşık fikirleri zarif ve güçlü uygulamalara dönüştürüyoruz." data-en="A boutique software studio specializing in mobile development and artificial intelligence. We turn complex ideas into elegant, powerful applications.">
+                    Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu. Karmaşık fikirleri zarif ve güçlü uygulamalara dönüştürüyoruz.
                 </p>
 
                 <div class="hero-scroll">
-                    <span class="hero-scroll-text">Scroll</span>
+                    <span class="hero-scroll-text" data-tr="Kaydır" data-en="Scroll">Kaydır</span>
                     <div class="hero-scroll-line"></div>
                 </div>
             </div>
@@ -1990,12 +2043,12 @@
         <canvas id="services-canvas" class="section-canvas"></canvas>
         <div class="section-header" style="max-width: 1400px; margin: 0 auto;">
             <div class="section-number">01</div>
-            <h2 class="section-title">What we do</h2>
+            <h2 class="section-title" data-tr="Ne yapıyoruz" data-en="What we do">Ne yapıyoruz</h2>
         </div>
 
         <div class="services-intro">
-            <p class="services-intro-text">
-                We transform ideas into <strong>powerful digital products</strong>. From mobile apps to AI-powered solutions, we deliver technology that drives growth and innovation.
+            <p class="services-intro-text" data-tr="Fikirleri <strong>güçlü dijital ürünlere</strong> dönüştürüyoruz. Mobil uygulamalardan yapay zekâ destekli çözümlere, büyümeyi ve yeniliği tetikleyen teknoloji üretiyoruz." data-en="We transform ideas into <strong>powerful digital products</strong>. From mobile apps to AI-powered solutions, we deliver technology that drives growth and innovation.">
+                Fikirleri <strong>güçlü dijital ürünlere</strong> dönüştürüyoruz. Mobil uygulamalardan yapay zekâ destekli çözümlere, büyümeyi ve yeniliği tetikleyen teknoloji üretiyoruz.
             </p>
         </div>
 
@@ -2010,23 +2063,23 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <span class="service-badge">Core Service</span>
+                    <span class="service-badge" data-tr="Ana Hizmet" data-en="Core Service">Ana Hizmet</span>
                 </div>
-                <h3 class="service-title">Mobile Development</h3>
-                <p class="service-desc">Native and cross-platform applications built with precision. We create seamless mobile experiences that users love and businesses rely on.</p>
+                <h3 class="service-title" data-tr="Mobil Geliştirme" data-en="Mobile Development">Mobil Geliştirme</h3>
+                <p class="service-desc" data-tr="Hassasiyetle geliştirilen yerel ve çapraz platform uygulamalar. Kullanıcıların sevdiği, işletmelerin güvendiği kusursuz mobil deneyimler oluşturuyoruz." data-en="Native and cross-platform applications built with precision. We create seamless mobile experiences that users love and businesses rely on.">Hassasiyetle geliştirilen yerel ve çapraz platform uygulamalar. Kullanıcıların sevdiği, işletmelerin güvendiği kusursuz mobil deneyimler oluşturuyoruz.</p>
 
                 <div class="service-features">
                     <div class="service-feature">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>Native iOS & Android Development</span>
+                        <span data-tr="Yerel iOS & Android Geliştirme" data-en="Native iOS & Android Development">Yerel iOS & Android Geliştirme</span>
                     </div>
                     <div class="service-feature">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>Cross-platform with Flutter & React Native</span>
+                        <span data-tr="Flutter & React Native ile çapraz platform" data-en="Cross-platform with Flutter & React Native">Flutter & React Native ile çapraz platform</span>
                     </div>
                     <div class="service-feature">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>App Store Optimization & Launch</span>
+                        <span data-tr="App Store optimizasyonu & yayın" data-en="App Store Optimization & Launch">App Store optimizasyonu & yayın</span>
                     </div>
                 </div>
 
@@ -2040,16 +2093,16 @@
 
                 <div class="service-stats">
                     <div class="service-stat">
-                        <div class="service-stat-number">50+</div>
-                        <div class="service-stat-label">Apps Delivered</div>
+                        <div class="service-stat-number">10+</div>
+                        <div class="service-stat-label" data-tr="Yayınlanan Uygulama" data-en="Apps Delivered">Yayınlanan Uygulama</div>
                     </div>
                     <div class="service-stat">
-                        <div class="service-stat-number">4.8</div>
-                        <div class="service-stat-label">Avg. Store Rating</div>
+                        <div class="service-stat-number">iOS</div>
+                        <div class="service-stat-label" data-tr="& Android" data-en="& Android">& Android</div>
                     </div>
                     <div class="service-stat">
-                        <div class="service-stat-number">1M+</div>
-                        <div class="service-stat-label">Downloads</div>
+                        <div class="service-stat-number">.NET</div>
+                        <div class="service-stat-label" data-tr="& React Native" data-en="& React Native">& React Native</div>
                     </div>
                 </div>
             </div>
@@ -2065,8 +2118,8 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="service-title">AI & Machine Learning</h3>
-                <p class="service-desc">From computer vision to NLP, we build intelligent systems that transform data into actionable insights and competitive advantages.</p>
+                <h3 class="service-title" data-tr="Yapay Zekâ & Makine Öğrenmesi" data-en="AI & Machine Learning">Yapay Zekâ & Makine Öğrenmesi</h3>
+                <p class="service-desc" data-tr="Bilgisayarlı görüden doğal dil işlemeye, veriyi eyleme dönüştürülebilir içgörülere ve rekabet avantajına çeviren akıllı sistemler kuruyoruz." data-en="From computer vision to NLP, we build intelligent systems that transform data into actionable insights and competitive advantages.">Bilgisayarlı görüden doğal dil işlemeye, veriyi eyleme dönüştürülebilir içgörülere ve rekabet avantajına çeviren akıllı sistemler kuruyoruz.</p>
 
                 <div class="service-tech-grid">
                     <div class="service-tech-item">
@@ -2098,10 +2151,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                         </svg>
                     </div>
-                    <span class="service-badge" style="background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.3); color: #4ade80;">Full Stack</span>
+                    <span class="service-badge" style="background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.3); color: #4ade80;" data-tr="Full Stack" data-en="Full Stack">Full Stack</span>
                 </div>
-                <h3 class="service-title">Custom Software Development</h3>
-                <p class="service-desc">End-to-end development tailored to your vision. Scalable architecture, clean code, and solutions that grow with your business.</p>
+                <h3 class="service-title" data-tr="Özel Yazılım Geliştirme" data-en="Custom Software Development">Özel Yazılım Geliştirme</h3>
+                <p class="service-desc" data-tr="Vizyonunuza özel uçtan uca geliştirme. Ölçeklenebilir mimari, temiz kod ve işinizle birlikte büyüyen çözümler." data-en="End-to-end development tailored to your vision. Scalable architecture, clean code, and solutions that grow with your business.">Vizyonunuza özel uçtan uca geliştirme. Ölçeklenebilir mimari, temiz kod ve işinizle birlikte büyüyen çözümler.</p>
 
                 <div class="service-tags">
                     <span class="service-tag">Python</span>
@@ -2123,10 +2176,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
                         </svg>
                     </div>
-                    <span class="service-badge" style="background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.3); color: #f472b6;">Design</span>
+                    <span class="service-badge" style="background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.3); color: #f472b6;" data-tr="Tasarım" data-en="Design">Tasarım</span>
                 </div>
-                <h3 class="service-title">UI/UX Design</h3>
-                <p class="service-desc">Beautiful, intuitive interfaces that delight users. We blend aesthetics with usability to create memorable digital experiences.</p>
+                <h3 class="service-title" data-tr="UI/UX Tasarımı" data-en="UI/UX Design">UI/UX Tasarımı</h3>
+                <p class="service-desc" data-tr="Kullanıcıyı mutlu eden zarif ve sezgisel arayüzler. Estetiği kullanılabilirlikle harmanlayarak akılda kalıcı dijital deneyimler tasarlıyoruz." data-en="Beautiful, intuitive interfaces that delight users. We blend aesthetics with usability to create memorable digital experiences.">Kullanıcıyı mutlu eden zarif ve sezgisel arayüzler. Estetiği kullanılabilirlikle harmanlayarak akılda kalıcı dijital deneyimler tasarlıyoruz.</p>
 
                 <div class="service-tags">
                     <span class="service-tag">Figma</span>
@@ -2146,8 +2199,8 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="service-title">Cloud & DevOps</h3>
-                <p class="service-desc">Scalable infrastructure, CI/CD pipelines, and cloud-native solutions for modern applications.</p>
+                <h3 class="service-title" data-tr="Bulut & DevOps" data-en="Cloud & DevOps">Bulut & DevOps</h3>
+                <p class="service-desc" data-tr="Modern uygulamalar için ölçeklenebilir altyapı, CI/CD hatları ve bulut-doğal çözümler." data-en="Scalable infrastructure, CI/CD pipelines, and cloud-native solutions for modern applications.">Modern uygulamalar için ölçeklenebilir altyapı, CI/CD hatları ve bulut-doğal çözümler.</p>
                 <div class="service-tags">
                     <span class="service-tag">AWS</span>
                     <span class="service-tag">GCP</span>
@@ -2164,8 +2217,8 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="service-title">Data Analytics</h3>
-                <p class="service-desc">Transform raw data into actionable insights with dashboards, reports, and predictive analytics.</p>
+                <h3 class="service-title" data-tr="Veri Analitiği" data-en="Data Analytics">Veri Analitiği</h3>
+                <p class="service-desc" data-tr="Ham veriyi panolar, raporlar ve kestirimci analitikle eyleme dönüştürülebilir içgörülere çevirin." data-en="Transform raw data into actionable insights with dashboards, reports, and predictive analytics.">Ham veriyi panolar, raporlar ve kestirimci analitikle eyleme dönüştürülebilir içgörülere çevirin.</p>
                 <div class="service-tags">
                     <span class="service-tag">BI Tools</span>
                     <span class="service-tag">ETL</span>
@@ -2182,8 +2235,8 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="service-title">Support & Maintenance</h3>
-                <p class="service-desc">24/7 support, regular updates, and proactive monitoring to keep your systems running smoothly.</p>
+                <h3 class="service-title" data-tr="Destek & Bakım" data-en="Support & Maintenance">Destek & Bakım</h3>
+                <p class="service-desc" data-tr="Sistemlerinizin sorunsuz çalışması için sürekli destek, düzenli güncellemeler ve proaktif izleme." data-en="24/7 support, regular updates, and proactive monitoring to keep your systems running smoothly.">Sistemlerinizin sorunsuz çalışması için sürekli destek, düzenli güncellemeler ve proaktif izleme.</p>
                 <div class="service-tags">
                     <span class="service-tag">24/7</span>
                     <span class="service-tag">SLA</span>
@@ -2204,32 +2257,32 @@
         </div>
         <div class="section-header" style="max-width: 1400px; margin: 0 auto 5rem;">
             <div class="section-number">02</div>
-            <h2 class="section-title">Who we are</h2>
+            <h2 class="section-title" data-tr="Biz kimiz" data-en="Who we are">Biz kimiz</h2>
         </div>
 
         <div class="about-content">
-            <div class="about-text">
-                We are a <strong>team of engineers, designers, and strategists</strong> who believe in the transformative power of technology. Based in Turkey, working globally.
+            <div class="about-text" data-tr="Teknolojinin dönüştürücü gücüne inanan <strong>mühendisler, tasarımcılar ve stratejistlerden</strong> oluşan bir ekibiz. Türkiye merkezli, global ölçekte çalışıyoruz.<br><br>Üstlendiğimiz her proje <strong>mükemmellik, yenilik ve kalıcı ortaklıklara</strong> bir bağlılıktır. Sadece yazılım geliştirmiyoruz — fark yaratan dijital deneyimler tasarlıyoruz." data-en="We are a <strong>team of engineers, designers, and strategists</strong> who believe in the transformative power of technology. Based in Turkey, working globally.<br><br>Every project we undertake is a commitment to <strong>excellence, innovation, and lasting partnerships</strong>. We don't just build software — we craft digital experiences that matter.">
+                Teknolojinin dönüştürücü gücüne inanan <strong>mühendisler, tasarımcılar ve stratejistlerden</strong> oluşan bir ekibiz. Türkiye merkezli, global ölçekte çalışıyoruz.
                 <br><br>
-                Every project we undertake is a commitment to <strong>excellence, innovation, and lasting partnerships</strong>. We don't just build software — we craft digital experiences that matter.
+                Üstlendiğimiz her proje <strong>mükemmellik, yenilik ve kalıcı ortaklıklara</strong> bir bağlılıktır. Sadece yazılım geliştirmiyoruz — fark yaratan dijital deneyimler tasarlıyoruz.
             </div>
 
             <div class="about-stats">
                 <div class="stat-item magnetic">
-                    <div class="stat-number" data-count="50">0+</div>
-                    <div class="stat-label">Projects Delivered</div>
+                    <div class="stat-number" data-count="15">0+</div>
+                    <div class="stat-label" data-tr="Teslim Edilen Proje" data-en="Projects Delivered">Teslim Edilen Proje</div>
                 </div>
                 <div class="stat-item magnetic">
-                    <div class="stat-number" data-count="99">0%</div>
-                    <div class="stat-label">Client Satisfaction</div>
+                    <div class="stat-number" data-count="7">0+</div>
+                    <div class="stat-label" data-tr="Açık Kaynak YZ Modeli" data-en="Open-source AI Models">Açık Kaynak YZ Modeli</div>
                 </div>
                 <div class="stat-item magnetic">
-                    <div class="stat-number" data-count="5">0+</div>
-                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-number" data-count="6">0+</div>
+                    <div class="stat-label" data-tr="Yıllık Deneyim" data-en="Years Experience">Yıllık Deneyim</div>
                 </div>
                 <div class="stat-item magnetic">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Available</div>
+                    <div class="stat-label" data-tr="Destek" data-en="Support Available">Destek</div>
                 </div>
             </div>
         </div>
@@ -2241,30 +2294,30 @@
         <div class="neural-network-bg" id="neural-bg"></div>
         <div class="section-header" style="max-width: 1400px; margin: 0 auto;">
             <div class="section-number">03</div>
-            <h2 class="section-title">Research & AI</h2>
-            <p class="section-subtitle">Open-source contributions and AI research projects on HuggingFace & GitHub</p>
+            <h2 class="section-title" data-tr="Araştırma & Yapay Zekâ" data-en="Research & AI">Araştırma & Yapay Zekâ</h2>
+            <p class="section-subtitle" data-tr="HuggingFace & GitHub üzerinde açık kaynak katkılar ve yapay zekâ araştırma projeleri" data-en="Open-source contributions and AI research projects on HuggingFace & GitHub">HuggingFace & GitHub üzerinde açık kaynak katkılar ve yapay zekâ araştırma projeleri</p>
         </div>
 
         <!-- Stats Banner -->
         <div class="research-stats-banner">
             <div class="research-stat">
                 <span class="research-stat-number">7</span>
-                <span class="research-stat-label">AI Models</span>
+                <span class="research-stat-label" data-tr="YZ Modeli" data-en="AI Models">YZ Modeli</span>
             </div>
             <div class="research-stat-divider"></div>
             <div class="research-stat">
                 <span class="research-stat-number">1.5K+</span>
-                <span class="research-stat-label">Downloads</span>
+                <span class="research-stat-label" data-tr="İndirme" data-en="Downloads">İndirme</span>
             </div>
             <div class="research-stat-divider"></div>
             <div class="research-stat">
                 <span class="research-stat-number">9</span>
-                <span class="research-stat-label">Live Demos</span>
+                <span class="research-stat-label" data-tr="Canlı Demo" data-en="Live Demos">Canlı Demo</span>
             </div>
             <div class="research-stat-divider"></div>
             <div class="research-stat">
                 <span class="research-stat-number">146</span>
-                <span class="research-stat-label">Likes</span>
+                <span class="research-stat-label" data-tr="Beğeni" data-en="Likes">Beğeni</span>
             </div>
         </div>
 
@@ -2533,7 +2586,7 @@
         </div>
         <div class="section-header" style="max-width: 1400px; margin: 0 auto;">
             <div class="section-number">04</div>
-            <h2 class="section-title">Selected work</h2>
+            <h2 class="section-title" data-tr="Seçili işler" data-en="Selected work">Seçili işler</h2>
         </div>
 
         <div class="projects-container">
@@ -2544,17 +2597,17 @@
                         <canvas class="project-canvas" data-type="health"></canvas>
                         <div class="project-3d-overlay">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
                             </svg>
                         </div>
                     </div>
                 </div>
                 <div class="project-content">
-                    <div class="project-category">AI / Mobile App</div>
-                    <h3 class="project-title">AI-Powered Health Tracker</h3>
-                    <p class="project-desc">Intelligent health monitoring with predictive analytics, personalized recommendations, and seamless wearable integration.</p>
+                    <div class="project-category" data-tr="Mobil & Yapay Zekâ" data-en="Mobile & AI">Mobil & Yapay Zekâ</div>
+                    <h3 class="project-title">Vagara</h3>
+                    <p class="project-desc" data-tr="Doğa keşif ve rota uygulaması. Çevrimdışı harita, kişiselleştirilmiş patikalar, tür temelli keşif ve kademeli rozet sistemi. .NET 9 + Expo + kendi barındırılan MapLibre/Valhalla altyapısı. TestFlight'ta canlı." data-en="A nature exploration and trail app. Offline maps, personalized routes, species-based discovery and a tiered badge system. .NET 9 + Expo with a self-hosted MapLibre/Valhalla stack. Live on TestFlight.">Doğa keşif ve rota uygulaması. Çevrimdışı harita, kişiselleştirilmiş patikalar, tür temelli keşif ve kademeli rozet sistemi. .NET 9 + Expo + kendi barındırılan MapLibre/Valhalla altyapısı. TestFlight'ta canlı.</p>
                     <a href="#" class="project-link magnetic">
-                        <span>View Case Study</span>
+                        <span data-tr="Projeyi İncele" data-en="View Case Study">Projeyi İncele</span>
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -2564,11 +2617,11 @@
 
             <article class="project-item">
                 <div class="project-content">
-                    <div class="project-category">Enterprise Software</div>
-                    <h3 class="project-title">Smart Inventory System</h3>
-                    <p class="project-desc">Real-time inventory tracking with AI-driven demand forecasting, automated reordering, and comprehensive analytics dashboard.</p>
+                    <div class="project-category" data-tr="Kurumsal Yazılım" data-en="Enterprise Software">Kurumsal Yazılım</div>
+                    <h3 class="project-title">BirleşikHR</h3>
+                    <p class="project-desc" data-tr="Kurumlar için uçtan uca insan kaynakları web platformu. Personel yönetimi, izin ve süreç takibi tek bir modern arayüzde. Canlı ortamda çalışıyor." data-en="An end-to-end human resources web platform for organizations. Personnel management, leave and workflow tracking in a single modern interface. Running in production.">Kurumlar için uçtan uca insan kaynakları web platformu. Personel yönetimi, izin ve süreç takibi tek bir modern arayüzde. Canlı ortamda çalışıyor.</p>
                     <a href="#" class="project-link magnetic">
-                        <span>View Case Study</span>
+                        <span data-tr="Projeyi İncele" data-en="View Case Study">Projeyi İncele</span>
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -2580,7 +2633,7 @@
                         <canvas class="project-canvas" data-type="inventory"></canvas>
                         <div class="project-3d-overlay">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm7-3a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
                         </div>
                     </div>
@@ -2594,21 +2647,46 @@
                         <canvas class="project-canvas" data-type="fintech"></canvas>
                         <div class="project-3d-overlay">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                             </svg>
                         </div>
                     </div>
                 </div>
                 <div class="project-content">
-                    <div class="project-category">FinTech / Mobile</div>
-                    <h3 class="project-title">Digital Banking Platform</h3>
-                    <p class="project-desc">Secure, intuitive mobile banking with biometric authentication, instant transfers, and intelligent spending insights.</p>
+                    <div class="project-category" data-tr="Yapay Zekâ / Endüstriyel" data-en="AI / Industrial">Yapay Zekâ / Endüstriyel</div>
+                    <h3 class="project-title">KBB Dijital İkiz</h3>
+                    <p class="project-desc" data-tr="Konya Büyükşehir Belediyesi araç filosu için kestirimci bakım dijital ikizi. 396 bin iş emrinin ETL'i ve 30 günlük arıza tahmin modeli (AUC 0.82) ile planlı bakıma geçiş." data-en="A predictive-maintenance digital twin for the Konya Metropolitan Municipality vehicle fleet. ETL over 396K work orders and a 30-day failure-prediction model (AUC 0.82) enabling a shift to planned maintenance.">Konya Büyükşehir Belediyesi araç filosu için kestirimci bakım dijital ikizi. 396 bin iş emrinin ETL'i ve 30 günlük arıza tahmin modeli (AUC 0.82) ile planlı bakıma geçiş.</p>
                     <a href="#" class="project-link magnetic">
-                        <span>View Case Study</span>
+                        <span data-tr="Projeyi İncele" data-en="View Case Study">Projeyi İncele</span>
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="project-content">
+                    <div class="project-category" data-tr="Web Platformu" data-en="Web Platform">Web Platformu</div>
+                    <h3 class="project-title">IMO Konya</h3>
+                    <p class="project-desc" data-tr="İnşaat Mühendisleri Odası Konya Şubesi için dijital platform. Üye hizmetleri, etkinlik ve duyuru yönetimini modern, erişilebilir bir web deneyiminde topluyor." data-en="A digital platform for the Chamber of Civil Engineers, Konya branch. It brings member services, events and announcement management together in a modern, accessible web experience.">İnşaat Mühendisleri Odası Konya Şubesi için dijital platform. Üye hizmetleri, etkinlik ve duyuru yönetimini modern, erişilebilir bir web deneyiminde topluyor.</p>
+                    <a href="#" class="project-link magnetic">
+                        <span data-tr="Projeyi İncele" data-en="View Case Study">Projeyi İncele</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="project-image magnetic">
+                    <div class="project-image-inner">
+                        <div class="project-image-gradient" style="background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);"></div>
+                        <canvas class="project-canvas" data-type="inventory"></canvas>
+                        <div class="project-3d-overlay">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </article>
         </div>
@@ -2618,12 +2696,12 @@
     <section class="contact" id="contact">
         <div class="section-header" style="max-width: 1400px; margin: 0 auto;">
             <div class="section-number">05</div>
-            <h2 class="section-title">Get in touch</h2>
+            <h2 class="section-title" data-tr="İletişime geç" data-en="Get in touch">İletişime geç</h2>
         </div>
 
         <div class="contact-container">
             <div class="contact-info-wrapper">
-                <h3 class="contact-heading">Have a project in mind? Let's create something extraordinary together.</h3>
+                <h3 class="contact-heading" data-tr="Aklınızda bir proje mi var? Birlikte sıra dışı bir şey yaratalım." data-en="Have a project in mind? Let's create something extraordinary together.">Aklınızda bir proje mi var? Birlikte sıra dışı bir şey yaratalım.</h3>
 
                 <div class="contact-info">
                     <div class="contact-item">
@@ -2637,7 +2715,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
-                        <span>Turkey</span>
+                        <span data-tr="Türkiye" data-en="Turkey">Türkiye</span>
                     </div>
                 </div>
 
@@ -2663,28 +2741,28 @@
             <form class="contact-form" id="contact-form">
                 <div class="form-group">
                     <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
-                    <label class="form-label" for="name">Your Name</label>
+                    <label class="form-label" for="name" data-tr="Adınız" data-en="Your Name">Adınız</label>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
-                    <label class="form-label" for="email">Your Email</label>
+                    <label class="form-label" for="email" data-tr="E-posta adresiniz" data-en="Your Email">E-posta adresiniz</label>
                 </div>
                 <div class="form-group">
                     <select class="form-select" id="project-type" name="project-type" required>
-                        <option value="" disabled selected>Project Type</option>
-                        <option value="mobile">Mobile Application</option>
-                        <option value="ai">AI Solution</option>
-                        <option value="custom">Custom Software</option>
-                        <option value="other">Other</option>
+                        <option value="" disabled selected data-tr="Proje Türü" data-en="Project Type">Proje Türü</option>
+                        <option value="mobile" data-tr="Mobil Uygulama" data-en="Mobile Application">Mobil Uygulama</option>
+                        <option value="ai" data-tr="Yapay Zekâ Çözümü" data-en="AI Solution">Yapay Zekâ Çözümü</option>
+                        <option value="custom" data-tr="Özel Yazılım" data-en="Custom Software">Özel Yazılım</option>
+                        <option value="other" data-tr="Diğer" data-en="Other">Diğer</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <textarea class="form-textarea" id="message" name="message" placeholder=" " required></textarea>
-                    <label class="form-label" for="message">Tell us about your project</label>
+                    <label class="form-label" for="message" data-tr="Projenizden bahsedin" data-en="Tell us about your project">Projenizden bahsedin</label>
                 </div>
                 <button type="submit" class="form-submit magnetic">
                     <span>
-                        Send Message
+                        <span class="btn-text" data-tr="Mesaj Gönder" data-en="Send Message">Mesaj Gönder</span>
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -2699,14 +2777,14 @@
         <div class="footer-content">
             <a href="#" class="footer-logo magnetic">Arfhause</a>
             <div class="footer-links">
-                <a href="#services" class="footer-link">Services</a>
-                <a href="#about" class="footer-link">About</a>
-                <a href="#research" class="footer-link">Research</a>
-                <a href="#projects" class="footer-link">Work</a>
-                <a href="#contact" class="footer-link">Contact</a>
-                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                <a href="#services" class="footer-link" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+                <a href="#about" class="footer-link" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+                <a href="#research" class="footer-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                <a href="#projects" class="footer-link" data-tr="Projeler" data-en="Work">Projeler</a>
+                <a href="#contact" class="footer-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+                <a href="privacy-policy.html" class="footer-link" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</a>
             </div>
-            <span class="footer-copy">&copy; 2025 Arfhause. All rights reserved.</span>
+            <span class="footer-copy" data-tr="&copy; 2026 Arfhause. Tüm hakları saklıdır." data-en="&copy; 2026 Arfhause. All rights reserved.">&copy; 2026 Arfhause. Tüm hakları saklıdır.</span>
         </div>
     </footer>
 
@@ -3366,6 +3444,50 @@
             }
 
         });
+    </script>
+
+    <!-- ===== Dil / Language (TR/EN) ===== -->
+    <script>
+        (function () {
+            var STORAGE_KEY = 'arfhause-lang';
+            var supported = ['tr', 'en'];
+
+            function getInitialLang() {
+                var saved = null;
+                try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (saved && supported.indexOf(saved) !== -1) return saved;
+                var nav = (navigator.language || 'tr').slice(0, 2).toLowerCase();
+                return nav === 'tr' ? 'tr' : 'en';
+            }
+
+            function applyLang(lang) {
+                if (supported.indexOf(lang) === -1) lang = 'tr';
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+                    var val = el.getAttribute('data-' + lang);
+                    if (val !== null) el.innerHTML = val;
+                });
+                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+                var toggle = document.getElementById('lang-toggle');
+                if (toggle) {
+                    toggle.setAttribute('data-active', lang);
+                    toggle.setAttribute('aria-label', lang === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç');
+                }
+            }
+
+            var current = getInitialLang();
+            applyLang(current);
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var toggle = document.getElementById('lang-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function () {
+                        current = (document.documentElement.lang === 'tr') ? 'en' : 'tr';
+                        applyLang(current);
+                    });
+                }
+            });
+        })();
     </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for The Holy Quran: Indexed by Arfhause.">
-    <title>Privacy Policy | The Holy Quran: Indexed</title>
+    <meta name="description" content="The Holy Quran: Indexed (Arfhause) gizlilik politikası — Privacy Policy.">
+    <title data-tr="Gizlilik Politikası | The Holy Quran: Indexed" data-en="Privacy Policy | The Holy Quran: Indexed">Gizlilik Politikası | The Holy Quran: Indexed</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -305,6 +305,27 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .lang-toggle {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+            padding: 0.35rem 0.7rem;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--gray-400);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .lang-toggle:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.12); }
+        .lang-toggle .lang-sep { color: var(--gray-700); }
+        .lang-toggle[data-active="tr"] .lang-tr,
+        .lang-toggle[data-active="en"] .lang-en { color: var(--white); }
     </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%236366f1' rx='12' width='100' height='100'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='60' font-weight='800' fill='white'%3EA%3C/text%3E%3C/svg%3E">
 </head>
@@ -314,101 +335,93 @@
     <nav class="nav" aria-label="Primary navigation">
         <a href="index.html" class="brand">Arfhause</a>
         <div class="nav-links">
-            <a href="index.html#research" class="nav-link">Research</a>
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="index.html#research" class="nav-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+            <a href="index.html#projects" class="nav-link" data-tr="Projeler" data-en="Work">Projeler</a>
+            <a href="index.html#contact" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+            <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Dil / Language" data-active="tr"><span class="lang-opt lang-tr">TR</span><span class="lang-sep">/</span><span class="lang-opt lang-en">EN</span></button>
         </div>
     </nav>
 
     <main>
         <header class="hero">
-            <h1>Privacy Policy</h1>
-            <p>
-                This Privacy Policy applies to <strong>The Holy Quran: Indexed</strong>, package
-                name <strong>com.arfhause.holyquran.indexed</strong>, provided by Arfhause as a
-                free mobile application.
+            <h1 data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</h1>
+            <p data-tr="Bu Gizlilik Politikası, Arfhause tarafından ücretsiz bir mobil uygulama olarak sunulan, paket adı <strong>com.arfhause.holyquran.indexed</strong> olan <strong>The Holy Quran: Indexed</strong> uygulaması için geçerlidir." data-en="This Privacy Policy applies to <strong>The Holy Quran: Indexed</strong>, package name <strong>com.arfhause.holyquran.indexed</strong>, provided by Arfhause as a free mobile application.">
+                Bu Gizlilik Politikası, Arfhause tarafından ücretsiz bir mobil uygulama olarak sunulan, paket adı <strong>com.arfhause.holyquran.indexed</strong> olan <strong>The Holy Quran: Indexed</strong> uygulaması için geçerlidir.
             </p>
 
             <div class="meta-grid" aria-label="Policy summary">
                 <div class="meta-card">
-                    <span class="meta-label">App</span>
+                    <span class="meta-label" data-tr="Uygulama" data-en="App">Uygulama</span>
                     <span class="meta-value">The Holy Quran: Indexed</span>
                 </div>
                 <div class="meta-card">
-                    <span class="meta-label">Developer</span>
+                    <span class="meta-label" data-tr="Geliştirici" data-en="Developer">Geliştirici</span>
                     <span class="meta-value">Arfhause</span>
                 </div>
                 <div class="meta-card">
-                    <span class="meta-label">Effective Date</span>
-                    <span class="meta-value">January 14, 2026</span>
+                    <span class="meta-label" data-tr="Yürürlük Tarihi" data-en="Effective Date">Yürürlük Tarihi</span>
+                    <span class="meta-value" data-tr="14 Ocak 2026" data-en="January 14, 2026">14 Ocak 2026</span>
                 </div>
             </div>
         </header>
 
         <div class="content">
             <aside class="toc" aria-label="Privacy Policy sections">
-                <a href="#overview">Overview</a>
-                <a href="#information">Information Collection and Use</a>
-                <a href="#third-party">Third-Party Services</a>
-                <a href="#sharing">Data Sharing</a>
-                <a href="#retention">Data Retention</a>
-                <a href="#children">Children's Privacy</a>
-                <a href="#security">Security</a>
-                <a href="#changes">Changes</a>
-                <a href="#consent">Your Consent</a>
-                <a href="#contact">Contact Us</a>
+                <a href="#overview" data-tr="Genel Bakış" data-en="Overview">Genel Bakış</a>
+                <a href="#information" data-tr="Bilgi Toplama ve Kullanım" data-en="Information Collection and Use">Bilgi Toplama ve Kullanım</a>
+                <a href="#third-party" data-tr="Üçüncü Taraf Hizmetleri" data-en="Third-Party Services">Üçüncü Taraf Hizmetleri</a>
+                <a href="#sharing" data-tr="Veri Paylaşımı" data-en="Data Sharing">Veri Paylaşımı</a>
+                <a href="#retention" data-tr="Veri Saklama" data-en="Data Retention">Veri Saklama</a>
+                <a href="#children" data-tr="Çocukların Gizliliği" data-en="Children's Privacy">Çocukların Gizliliği</a>
+                <a href="#security" data-tr="Güvenlik" data-en="Security">Güvenlik</a>
+                <a href="#changes" data-tr="Değişiklikler" data-en="Changes">Değişiklikler</a>
+                <a href="#consent" data-tr="Onayınız" data-en="Your Consent">Onayınız</a>
+                <a href="#contact" data-tr="Bize Ulaşın" data-en="Contact Us">Bize Ulaşın</a>
             </aside>
 
             <article class="policy">
                 <section id="overview">
-                    <h2>Overview</h2>
-                    <p>
-                        Effective date: January 14, 2026
+                    <h2 data-tr="Genel Bakış" data-en="Overview">Genel Bakış</h2>
+                    <p data-tr="Yürürlük tarihi: 14 Ocak 2026" data-en="Effective date: January 14, 2026">
+                        Yürürlük tarihi: 14 Ocak 2026
                     </p>
-                    <p>
-                        This Privacy Policy applies to The Holy Quran: Indexed mobile application,
-                        package name com.arfhause.holyquran.indexed, provided by Arfhause as a free
-                        application.
+                    <p data-tr="Bu Gizlilik Politikası, Arfhause tarafından ücretsiz bir uygulama olarak sunulan, paket adı com.arfhause.holyquran.indexed olan The Holy Quran: Indexed mobil uygulaması için geçerlidir." data-en="This Privacy Policy applies to The Holy Quran: Indexed mobile application, package name com.arfhause.holyquran.indexed, provided by Arfhause as a free application.">
+                        Bu Gizlilik Politikası, Arfhause tarafından ücretsiz bir uygulama olarak sunulan, paket adı com.arfhause.holyquran.indexed olan The Holy Quran: Indexed mobil uygulaması için geçerlidir.
                     </p>
-                    <p>
-                        This page explains what information the Application collects, how it is used,
-                        and how users can contact us regarding privacy-related questions.
+                    <p data-tr="Bu sayfa, Uygulamanın hangi bilgileri topladığını, bunların nasıl kullanıldığını ve kullanıcıların gizlilikle ilgili sorular için bizimle nasıl iletişime geçebileceğini açıklar." data-en="This page explains what information the Application collects, how it is used, and how users can contact us regarding privacy-related questions.">
+                        Bu sayfa, Uygulamanın hangi bilgileri topladığını, bunların nasıl kullanıldığını ve kullanıcıların gizlilikle ilgili sorular için bizimle nasıl iletişime geçebileceğini açıklar.
                     </p>
                 </section>
 
                 <section id="information">
-                    <h2>Information Collection and Use</h2>
-                    <p>
-                        The Application may collect certain information automatically when you download
-                        and use it. This information may include:
+                    <h2 data-tr="Bilgi Toplama ve Kullanım" data-en="Information Collection and Use">Bilgi Toplama ve Kullanım</h2>
+                    <p data-tr="Uygulama, indirip kullandığınızda bazı bilgileri otomatik olarak toplayabilir. Bu bilgiler şunları içerebilir:" data-en="The Application may collect certain information automatically when you download and use it. This information may include:">
+                        Uygulama, indirip kullandığınızda bazı bilgileri otomatik olarak toplayabilir. Bu bilgiler şunları içerebilir:
                     </p>
                     <ul>
-                        <li>Device information, such as device model, operating system version, and app version.</li>
-                        <li>Internet Protocol address.</li>
-                        <li>App usage information, such as pages or sections visited, time and date of use, and time spent in the Application.</li>
-                        <li>Diagnostic and crash information used to improve stability and performance.</li>
+                        <li data-tr="Cihaz modeli, işletim sistemi sürümü ve uygulama sürümü gibi cihaz bilgileri." data-en="Device information, such as device model, operating system version, and app version.">Cihaz modeli, işletim sistemi sürümü ve uygulama sürümü gibi cihaz bilgileri.</li>
+                        <li data-tr="İnternet Protokolü (IP) adresi." data-en="Internet Protocol address.">İnternet Protokolü (IP) adresi.</li>
+                        <li data-tr="Ziyaret edilen sayfa veya bölümler, kullanım tarihi ve saati ve Uygulamada geçirilen süre gibi uygulama kullanım bilgileri." data-en="App usage information, such as pages or sections visited, time and date of use, and time spent in the Application.">Ziyaret edilen sayfa veya bölümler, kullanım tarihi ve saati ve Uygulamada geçirilen süre gibi uygulama kullanım bilgileri.</li>
+                        <li data-tr="Kararlılığı ve performansı artırmak için kullanılan tanılama ve çökme bilgileri." data-en="Diagnostic and crash information used to improve stability and performance.">Kararlılığı ve performansı artırmak için kullanılan tanılama ve çökme bilgileri.</li>
                     </ul>
-                    <p>
-                        The Application does not collect precise location information from your mobile
-                        device.
+                    <p data-tr="Uygulama, mobil cihazınızdan kesin konum bilgisi toplamaz." data-en="The Application does not collect precise location information from your mobile device.">
+                        Uygulama, mobil cihazınızdan kesin konum bilgisi toplamaz.
                     </p>
-                    <p>The information collected is used to:</p>
+                    <p data-tr="Toplanan bilgiler şu amaçlarla kullanılır:" data-en="The information collected is used to:">Toplanan bilgiler şu amaçlarla kullanılır:</p>
                     <ul>
-                        <li>Provide and improve the Application.</li>
-                        <li>Analyze usage and performance.</li>
-                        <li>Detect and fix technical issues.</li>
-                        <li>Maintain the security and reliability of the Application.</li>
+                        <li data-tr="Uygulamayı sağlamak ve iyileştirmek." data-en="Provide and improve the Application.">Uygulamayı sağlamak ve iyileştirmek.</li>
+                        <li data-tr="Kullanımı ve performansı analiz etmek." data-en="Analyze usage and performance.">Kullanımı ve performansı analiz etmek.</li>
+                        <li data-tr="Teknik sorunları tespit etmek ve gidermek." data-en="Detect and fix technical issues.">Teknik sorunları tespit etmek ve gidermek.</li>
+                        <li data-tr="Uygulamanın güvenliğini ve güvenilirliğini sürdürmek." data-en="Maintain the security and reliability of the Application.">Uygulamanın güvenliğini ve güvenilirliğini sürdürmek.</li>
                     </ul>
                 </section>
 
                 <section id="third-party">
-                    <h2>Third-Party Services</h2>
-                    <p>
-                        The Application may use third-party services that may collect information used
-                        to identify you. These services process data according to their own privacy
-                        policies.
+                    <h2 data-tr="Üçüncü Taraf Hizmetleri" data-en="Third-Party Services">Üçüncü Taraf Hizmetleri</h2>
+                    <p data-tr="Uygulama, sizi tanımlamak için kullanılabilecek bilgileri toplayabilen üçüncü taraf hizmetleri kullanabilir. Bu hizmetler verileri kendi gizlilik politikalarına göre işler." data-en="The Application may use third-party services that may collect information used to identify you. These services process data according to their own privacy policies.">
+                        Uygulama, sizi tanımlamak için kullanılabilecek bilgileri toplayabilen üçüncü taraf hizmetleri kullanabilir. Bu hizmetler verileri kendi gizlilik politikalarına göre işler.
                     </p>
-                    <p>Examples of third-party services may include:</p>
+                    <p data-tr="Üçüncü taraf hizmetlerine örnekler şunlardır:" data-en="Examples of third-party services may include:">Üçüncü taraf hizmetlerine örnekler şunlardır:</p>
                     <ul>
                         <li>Google Play Services.</li>
                         <li>Firebase Analytics.</li>
@@ -418,80 +431,68 @@
                 </section>
 
                 <section id="sharing">
-                    <h2>Data Sharing</h2>
-                    <p>
-                        The Service Provider does not sell users' personal information. Information may
-                        be shared only in the following cases:
+                    <h2 data-tr="Veri Paylaşımı" data-en="Data Sharing">Veri Paylaşımı</h2>
+                    <p data-tr="Hizmet Sağlayıcı, kullanıcıların kişisel bilgilerini satmaz. Bilgiler yalnızca aşağıdaki durumlarda paylaşılabilir:" data-en="The Service Provider does not sell users' personal information. Information may be shared only in the following cases:">
+                        Hizmet Sağlayıcı, kullanıcıların kişisel bilgilerini satmaz. Bilgiler yalnızca aşağıdaki durumlarda paylaşılabilir:
                     </p>
                     <ul>
-                        <li>When required by law or legal process.</li>
-                        <li>To protect the rights, safety, or security of users, the Service Provider, or others.</li>
-                        <li>With trusted service providers who process information on behalf of the Service Provider and are required to protect it.</li>
+                        <li data-tr="Yasa veya yasal süreç gerektirdiğinde." data-en="When required by law or legal process.">Yasa veya yasal süreç gerektirdiğinde.</li>
+                        <li data-tr="Kullanıcıların, Hizmet Sağlayıcının veya başkalarının haklarını, güvenliğini veya emniyetini korumak için." data-en="To protect the rights, safety, or security of users, the Service Provider, or others.">Kullanıcıların, Hizmet Sağlayıcının veya başkalarının haklarını, güvenliğini veya emniyetini korumak için.</li>
+                        <li data-tr="Bilgileri Hizmet Sağlayıcı adına işleyen ve bunları korumakla yükümlü olan güvenilir hizmet sağlayıcılarla." data-en="With trusted service providers who process information on behalf of the Service Provider and are required to protect it.">Bilgileri Hizmet Sağlayıcı adına işleyen ve bunları korumakla yükümlü olan güvenilir hizmet sağlayıcılarla.</li>
                     </ul>
                 </section>
 
                 <section id="retention">
-                    <h2>Data Retention</h2>
-                    <p>
-                        The Service Provider retains user-provided and automatically collected data only
-                        for as long as necessary to provide and improve the Application, comply with legal
-                        obligations, resolve disputes, and enforce agreements.
+                    <h2 data-tr="Veri Saklama" data-en="Data Retention">Veri Saklama</h2>
+                    <p data-tr="Hizmet Sağlayıcı, kullanıcı tarafından sağlanan ve otomatik olarak toplanan verileri yalnızca Uygulamayı sağlamak ve iyileştirmek, yasal yükümlülüklere uymak, anlaşmazlıkları çözmek ve sözleşmeleri uygulamak için gerekli olduğu sürece saklar." data-en="The Service Provider retains user-provided and automatically collected data only for as long as necessary to provide and improve the Application, comply with legal obligations, resolve disputes, and enforce agreements.">
+                        Hizmet Sağlayıcı, kullanıcı tarafından sağlanan ve otomatik olarak toplanan verileri yalnızca Uygulamayı sağlamak ve iyileştirmek, yasal yükümlülüklere uymak, anlaşmazlıkları çözmek ve sözleşmeleri uygulamak için gerekli olduğu sürece saklar.
                     </p>
                     <p>
-                        Users may request deletion of their user-provided data by contacting:
+                        <span data-tr="Kullanıcılar, sağladıkları verilerin silinmesini şu adres üzerinden talep edebilir:" data-en="Users may request deletion of their user-provided data by contacting:">Kullanıcılar, sağladıkları verilerin silinmesini şu adres üzerinden talep edebilir:</span>
                         <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>.
                     </p>
                 </section>
 
                 <section id="children">
-                    <h2>Children's Privacy</h2>
-                    <p>
-                        The Application is not specifically directed to children under the age of 13.
-                        The Service Provider does not knowingly collect personally identifiable
-                        information from children under 13.
+                    <h2 data-tr="Çocukların Gizliliği" data-en="Children's Privacy">Çocukların Gizliliği</h2>
+                    <p data-tr="Uygulama, özellikle 13 yaşın altındaki çocuklara yönelik değildir. Hizmet Sağlayıcı, 13 yaşın altındaki çocuklardan bilerek kişisel olarak tanımlanabilir bilgi toplamaz." data-en="The Application is not specifically directed to children under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13.">
+                        Uygulama, özellikle 13 yaşın altındaki çocuklara yönelik değildir. Hizmet Sağlayıcı, 13 yaşın altındaki çocuklardan bilerek kişisel olarak tanımlanabilir bilgi toplamaz.
                     </p>
                     <p>
-                        If you believe that a child has provided personal information through the
-                        Application, please contact us at
-                        <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a> so that appropriate
-                        action can be taken.
+                        <span data-tr="Bir çocuğun Uygulama aracılığıyla kişisel bilgi sağladığını düşünüyorsanız, gerekli işlemin yapılabilmesi için lütfen bizimle şu adresten iletişime geçin:" data-en="If you believe that a child has provided personal information through the Application, please contact us at">Bir çocuğun Uygulama aracılığıyla kişisel bilgi sağladığını düşünüyorsanız, gerekli işlemin yapılabilmesi için lütfen bizimle şu adresten iletişime geçin:</span>
+                        <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>.
                     </p>
                 </section>
 
                 <section id="security">
-                    <h2>Security</h2>
-                    <p>
-                        The Service Provider uses reasonable administrative, technical, and organizational
-                        safeguards to protect information processed and maintained through the Application.
-                        However, no method of electronic transmission or storage is completely secure.
+                    <h2 data-tr="Güvenlik" data-en="Security">Güvenlik</h2>
+                    <p data-tr="Hizmet Sağlayıcı, Uygulama aracılığıyla işlenen ve saklanan bilgileri korumak için makul idari, teknik ve organizasyonel önlemler kullanır. Ancak hiçbir elektronik iletim veya saklama yöntemi tamamen güvenli değildir." data-en="The Service Provider uses reasonable administrative, technical, and organizational safeguards to protect information processed and maintained through the Application. However, no method of electronic transmission or storage is completely secure.">
+                        Hizmet Sağlayıcı, Uygulama aracılığıyla işlenen ve saklanan bilgileri korumak için makul idari, teknik ve organizasyonel önlemler kullanır. Ancak hiçbir elektronik iletim veya saklama yöntemi tamamen güvenli değildir.
                     </p>
                 </section>
 
                 <section id="changes">
-                    <h2>Changes to This Policy</h2>
-                    <p>
-                        This Privacy Policy may be updated from time to time. Any changes will be posted
-                        on this page. Users are advised to review this Privacy Policy periodically.
+                    <h2 data-tr="Bu Politikadaki Değişiklikler" data-en="Changes to This Policy">Bu Politikadaki Değişiklikler</h2>
+                    <p data-tr="Bu Gizlilik Politikası zaman zaman güncellenebilir. Tüm değişiklikler bu sayfada yayınlanacaktır. Kullanıcıların bu Gizlilik Politikasını düzenli olarak gözden geçirmesi önerilir." data-en="This Privacy Policy may be updated from time to time. Any changes will be posted on this page. Users are advised to review this Privacy Policy periodically.">
+                        Bu Gizlilik Politikası zaman zaman güncellenebilir. Tüm değişiklikler bu sayfada yayınlanacaktır. Kullanıcıların bu Gizlilik Politikasını düzenli olarak gözden geçirmesi önerilir.
                     </p>
                 </section>
 
                 <section id="consent">
-                    <h2>Your Consent</h2>
-                    <p>
-                        By using the Application, you consent to the collection and use of information in
-                        accordance with this Privacy Policy.
+                    <h2 data-tr="Onayınız" data-en="Your Consent">Onayınız</h2>
+                    <p data-tr="Uygulamayı kullanarak, bilgilerin bu Gizlilik Politikasına uygun şekilde toplanmasını ve kullanılmasını kabul etmiş olursunuz." data-en="By using the Application, you consent to the collection and use of information in accordance with this Privacy Policy.">
+                        Uygulamayı kullanarak, bilgilerin bu Gizlilik Politikasına uygun şekilde toplanmasını ve kullanılmasını kabul etmiş olursunuz.
                     </p>
                 </section>
 
                 <section id="contact">
-                    <h2>Contact Us</h2>
-                    <p>
-                        If you have any questions about this Privacy Policy or privacy practices related
-                        to the Application, please contact:
+                    <h2 data-tr="Bize Ulaşın" data-en="Contact Us">Bize Ulaşın</h2>
+                    <p data-tr="Bu Gizlilik Politikası veya Uygulamayla ilgili gizlilik uygulamaları hakkında herhangi bir sorunuz varsa, lütfen iletişime geçin:" data-en="If you have any questions about this Privacy Policy or privacy practices related to the Application, please contact:">
+                        Bu Gizlilik Politikası veya Uygulamayla ilgili gizlilik uygulamaları hakkında herhangi bir sorunuz varsa, lütfen iletişime geçin:
                     </p>
                     <p>
                         Arfhause<br>
-                        Email: <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>
+                        <span data-tr="E-posta:" data-en="Email:">E-posta:</span> <a href="mailto:arfhause@gmail.com">arfhause@gmail.com</a>
                     </p>
                 </section>
             </article>
@@ -499,8 +500,50 @@
     </main>
 
     <footer class="footer">
-        <span>&copy; 2026 Arfhause. All rights reserved.</span>
-        <a href="index.html">Back to Arfhause</a>
+        <span data-tr="&copy; 2026 Arfhause. Tüm hakları saklıdır." data-en="&copy; 2026 Arfhause. All rights reserved.">&copy; 2026 Arfhause. Tüm hakları saklıdır.</span>
+        <a href="index.html" data-tr="Arfhause'a dön" data-en="Back to Arfhause">Arfhause'a dön</a>
     </footer>
+
+    <!-- ===== Dil / Language (TR/EN) ===== -->
+    <script>
+        (function () {
+            var STORAGE_KEY = 'arfhause-lang';
+            var supported = ['tr', 'en'];
+
+            function getInitialLang() {
+                var saved = null;
+                try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (saved && supported.indexOf(saved) !== -1) return saved;
+                var nav = (navigator.language || 'tr').slice(0, 2).toLowerCase();
+                return nav === 'tr' ? 'tr' : 'en';
+            }
+
+            function applyLang(lang) {
+                if (supported.indexOf(lang) === -1) lang = 'tr';
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+                    var val = el.getAttribute('data-' + lang);
+                    if (val !== null) el.innerHTML = val;
+                });
+                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+                var toggle = document.getElementById('lang-toggle');
+                if (toggle) {
+                    toggle.setAttribute('data-active', lang);
+                    toggle.setAttribute('aria-label', lang === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç');
+                }
+            }
+
+            applyLang(getInitialLang());
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var toggle = document.getElementById('lang-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function () {
+                        applyLang(document.documentElement.lang === 'tr' ? 'en' : 'tr');
+                    });
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

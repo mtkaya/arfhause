@@ -1,0 +1,6 @@
+# Sunucudaki gizli yapilandirma (SMTP sifresi) git'e girmez
+config.php
+
+# Yedekler / OS
+*.bak
+.DS_Store
