@@ -56,12 +56,8 @@
   /* Research demo button hover */
   .demo-btn:hover{border-color:#1d1d1f!important}
 
-  /* AI button hover */
-  #ai-run:hover{background:#1d4fd8!important}
+  /* Submit button hover */
   #contact-submit:hover{background:#1d4fd8!important}
-
-  /* AI input focus */
-  #ai-input:focus{border-color:#5b9bff!important}
 
   @media (max-width:860px){
     #nav-links{display:none!important}
@@ -71,6 +67,37 @@
     .story-caption{position:static!important;opacity:1!important;transform:none!important}
   }
 </style>
+<noscript><style>
+  [data-reveal]{opacity:1!important;transform:none!important}
+  #hero-title{opacity:1!important}
+  #hero-title span{opacity:1!important;transform:none!important}
+</style></noscript>
+<script>
+  // FAILSAFE — content must never stay invisible. This runs independently of
+  // the main script: if anything below throws (CDN/font/observer hiccup), all
+  // [data-reveal] content and the hero headline are forced visible.
+  (function () {
+    function reveal() {
+      try {
+        var els = document.querySelectorAll('[data-reveal]');
+        for (var i = 0; i < els.length; i++) {
+          var cs = getComputedStyle(els[i]);
+          if (cs.opacity === '0') { els[i].style.opacity = '1'; els[i].style.transform = 'none'; }
+        }
+        var t = document.getElementById('hero-title');
+        if (t) {
+          var spans = t.querySelectorAll('span');
+          for (var j = 0; j < spans.length; j++) { spans[j].style.opacity = '1'; spans[j].style.transform = 'none'; }
+          if (getComputedStyle(t).opacity === '0') t.style.opacity = '1';
+        }
+      } catch (e) {}
+    }
+    // Reveal stragglers shortly after load; healthy JS reveals earlier via observers.
+    window.addEventListener('load', function () { setTimeout(reveal, 2200); });
+    // Last-resort hard timeout independent of load event.
+    setTimeout(reveal, 4000);
+  })();
+</script>
 </head>
 <body>
 <div id="top" style="position:relative;width:100%;overflow:hidden">
@@ -81,8 +108,8 @@
   <div id="nav-links" style="display:flex;align-items:center;gap:clamp(20px,2.6vw,36px)">
     <a href="#services" data-en="Services" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Hizmetler</a>
     <a href="#about" data-en="About" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Hakkımızda</a>
-    <a href="#research" data-en="Research" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Araştırma</a>
-    <a href="#work" data-en="Work" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">İşler</a>
+    <a href="#research" data-en="R&amp;D" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Ar-Ge</a>
+    <a href="#work" data-en="References" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Referanslar</a>
   </div>
   <div style="display:flex;align-items:center;gap:14px">
     <button id="lang-btn" aria-label="Switch language" style="border:1px solid #d2d2d7;background:transparent;color:#1d1d1f;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:0.04em;border-radius:980px;padding:7px 14px;cursor:pointer;transition:border-color .2s,background .2s">EN</button>
@@ -102,7 +129,7 @@
     <p data-reveal data-en="A boutique software studio specializing in mobile development and artificial intelligence." style="font-size:clamp(18px,2.2vw,23px);font-weight:400;line-height:1.5;color:#6e6e73;max-width:620px;margin:0 auto 40px;opacity:0;transform:translateY(18px);transition:opacity .8s .15s,transform .8s .15s">Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.</p>
     <div data-reveal style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity .8s .3s,transform .8s .3s">
       <a href="#contact" data-magnetic data-en="Let's talk" class="btn-primary" style="background:#2563eb;color:#fff;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 30px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;will-change:transform">Projeni konuşalım</a>
-      <a href="#work" data-en="See our work" class="btn-ghost" style="color:#1d1d1f;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 26px;border:1px solid #d2d2d7;transition:border-color .2s,background .2s">İşleri gör</a>
+      <a href="#work" data-en="See our references" class="btn-ghost" style="color:#1d1d1f;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 26px;border:1px solid #d2d2d7;transition:border-color .2s,background .2s">Referansları gör</a>
     </div>
   </div>
   <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#86868b">
@@ -195,30 +222,32 @@
 </section>
 
 <!-- ===================== STORY (pinned iPhone) ===================== -->
-<section id="story-wrap" style="position:relative;height:340vh;background:#f5f5f7">
+<section id="story-wrap" style="position:relative;height:260vh;background:#f5f5f7">
   <div id="story-sticky" style="position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden">
     <div id="story-grid" style="max-width:1180px;margin:0 auto;width:100%;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
 
       <!-- Captions column -->
-      <div style="position:relative;min-height:340px">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:24px"><span data-en="From idea to product">Fikirden ürüne</span></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:36px;min-height:560px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb"><span data-en="From idea to product">Fikirden ürüne</span></div>
 
-        <div class="story-caption" data-cap="0" style="position:absolute;top:46px;left:0;right:0;transition:opacity .5s,transform .5s">
-          <h2 data-en="Mobile, refined." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">İncelikli mobil.</h2>
-          <p data-en="Apps that feel native to the platform and effortless in the hand — offline-first, fast, considered." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Platforma ait hissettiren, elde zahmetsiz uygulamalar — çevrimdışı öncelikli, hızlı, özenli.</p>
+        <div style="position:relative;min-height:230px">
+          <div class="story-caption" data-cap="0" style="position:absolute;top:0;left:0;right:0;transition:opacity .5s,transform .5s">
+            <h2 data-en="Mobile, refined." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">İncelikli mobil.</h2>
+            <p data-en="Apps that feel native to the platform and effortless in the hand — offline-first, fast, considered." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Platforma ait hissettiren, elde zahmetsiz uygulamalar — çevrimdışı öncelikli, hızlı, özenli.</p>
+          </div>
+
+          <div class="story-caption" data-cap="1" style="position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
+            <h2 data-en="Intelligence, applied." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Uygulanan zekâ.</h2>
+            <p data-en="Vision and language models that turn messy real-world data into clear, timely decisions." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık gerçek dünya verisini net ve zamanında kararlara çeviren görü ve dil modelleri.</p>
+          </div>
+
+          <div class="story-caption" data-cap="2" style="position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
+            <h2 data-en="Enterprise, simplified." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Sadeleşen kurumsal.</h2>
+            <p data-en="Complex operations — HR, workflows, fleets — brought into one calm, modern interface." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık operasyonlar — İK, iş akışları, filolar — tek, sakin ve modern bir arayüzde.</p>
+          </div>
         </div>
 
-        <div class="story-caption" data-cap="1" style="position:absolute;top:46px;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
-          <h2 data-en="Intelligence, applied." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Uygulanan zekâ.</h2>
-          <p data-en="Vision and language models that turn messy real-world data into clear, timely decisions." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık gerçek dünya verisini net ve zamanında kararlara çeviren görü ve dil modelleri.</p>
-        </div>
-
-        <div class="story-caption" data-cap="2" style="position:absolute;top:46px;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
-          <h2 data-en="Enterprise, simplified." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Sadeleşen kurumsal.</h2>
-          <p data-en="Complex operations — HR, workflows, fleets — brought into one calm, modern interface." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık operasyonlar — İK, iş akışları, filolar — tek, sakin ve modern bir arayüzde.</p>
-        </div>
-
-        <div style="position:absolute;bottom:0;left:0;display:flex;gap:8px">
+        <div style="display:flex;gap:8px">
           <span class="story-dot" data-dot="0" style="width:26px;height:4px;border-radius:980px;background:#1d1d1f;transition:background .4s,width .4s"></span>
           <span class="story-dot" data-dot="1" style="width:18px;height:4px;border-radius:980px;background:#d2d2d7;transition:background .4s,width .4s"></span>
           <span class="story-dot" data-dot="2" style="width:18px;height:4px;border-radius:980px;background:#d2d2d7;transition:background .4s,width .4s"></span>
@@ -324,49 +353,43 @@
   </div>
 </section>
 
-<!-- ===================== RESEARCH & AI ===================== -->
+<!-- ===================== R&D & AI ===================== -->
 <section id="research" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#f5f5f7">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:720px;margin-bottom:48px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Research &amp; AI">Araştırma &amp; Yapay Zekâ</span></div>
-      <h2 data-en="We give back to the field." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;margin-bottom:20px">Alana geri veriyoruz.</h2>
-      <p data-en="Open-source models and tooling on HuggingFace and GitHub — research that feeds straight back into the products we build." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:#6e6e73">HuggingFace ve GitHub'da açık kaynak modeller ve araçlar — doğrudan ürünlerimizi besleyen araştırmalar.</p>
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="R&amp;D &amp; AI">Ar-Ge &amp; Yapay Zekâ</span></div>
+      <h2 data-en="We turn research into product." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;margin-bottom:20px">Ar-Ge'yi ürüne dönüştürüyoruz.</h2>
+      <p data-en="Dedicated R&amp;D in computer vision and language models — work that feeds directly into the products we ship for our clients." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:#6e6e73">Bilgisayarlı görü ve dil modelleri üzerine kendi Ar-Ge'miz — doğrudan müşterilerimize sunduğumuz ürünleri besleyen çalışmalar.</p>
     </div>
 
-    <!-- live stats band -->
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-bottom:24px;opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s">
+    <!-- capability stats band (static) -->
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-bottom:48px;opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s">
       <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px"><span id="live-dot" style="width:7px;height:7px;border-radius:50%;background:#3ecf8e;display:inline-block;animation:breathe 2.4s ease-in-out infinite"></span><span data-en="Live" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#86868b;font-weight:600">Canlı</span></div>
-        <div id="stat-models" style="font-size:36px;font-weight:600;letter-spacing:-0.03em">7</div>
-        <div data-en="Open models" style="font-size:14px;color:#6e6e73;margin-top:2px">Açık model</div>
+        <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">7</div>
+        <div data-en="AI models in production" style="font-size:14px;color:#6e6e73;margin-top:6px">Üretimdeki AI modeli</div>
       </div>
       <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px"><span style="width:7px;height:7px;border-radius:50%;background:#3ecf8e;display:inline-block;animation:breathe 2.4s ease-in-out infinite"></span><span data-en="Live" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#86868b;font-weight:600">Canlı</span></div>
-        <div id="stat-downloads" style="font-size:36px;font-weight:600;letter-spacing:-0.03em">12K+</div>
-        <div data-en="Model downloads" style="font-size:14px;color:#6e6e73;margin-top:2px">Model indirmesi</div>
+        <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">396K</div>
+        <div data-en="Work orders processed" style="font-size:14px;color:#6e6e73;margin-top:6px">İşlenen iş emri</div>
       </div>
       <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px"><span style="width:7px;height:7px;border-radius:50%;background:#3ecf8e;display:inline-block;animation:breathe 2.4s ease-in-out infinite"></span><span data-en="Live" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#86868b;font-weight:600">Canlı</span></div>
-        <div id="stat-stars" style="font-size:36px;font-weight:600;letter-spacing:-0.03em">340+</div>
-        <div data-en="GitHub stars" style="font-size:14px;color:#6e6e73;margin-top:2px">GitHub yıldızı</div>
+        <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">0.82</div>
+        <div data-en="Prediction model AUC" style="font-size:14px;color:#6e6e73;margin-top:6px">Tahmin modeli AUC</div>
       </div>
       <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px"><span style="width:7px;height:7px;border-radius:50%;background:#3ecf8e;display:inline-block;animation:breathe 2.4s ease-in-out infinite"></span><span data-en="Live" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#86868b;font-weight:600">Canlı</span></div>
-        <div id="stat-repos" style="font-size:36px;font-weight:600;letter-spacing:-0.03em">20+</div>
-        <div data-en="Public repositories" style="font-size:14px;color:#6e6e73;margin-top:2px">Açık depo</div>
+        <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em" data-en="Vision · NLP · Forecasting">Görü · NLP · Tahmin</div>
+        <div data-en="R&amp;D focus areas" style="font-size:14px;color:#6e6e73;margin-top:6px">Ar-Ge odak alanları</div>
       </div>
     </div>
-    <div style="font-size:12px;color:#86868b;margin-bottom:48px"><span data-en="Source:">Kaynak:</span> <a href="https://huggingface.co/tugrulkaya" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none">huggingface.co/tugrulkaya</a> · <a href="https://github.com/mtkaya" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none">github.com/mtkaya</a></div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
       <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid #e8e8ed;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
           <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:#2563eb;background:#eef3ff;padding:5px 11px;border-radius:980px" data-en="Vision-Language">Görü-Dil</span>
           <span data-en="EuroSAT" style="font-size:12px;color:#86868b">EuroSAT</span>
         </div>
         <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px">GeoQwen-VL</h3>
-        <p data-en="A vision-language model fine-tuned for satellite &amp; aerial imagery understanding and land-cover reasoning." style="font-size:15px;line-height:1.55;color:#6e6e73;margin-bottom:22px">Uydu ve hava görüntüsü anlama ve arazi örtüsü çıkarımı için ince ayarlı görü-dil modeli.</p>
-        <a href="https://huggingface.co/tugrulkaya" target="_blank" rel="noopener" data-magnetic data-en="Try demo" class="demo-btn" style="display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">Demoyu dene <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <p data-en="A vision-language model fine-tuned for satellite &amp; aerial imagery understanding and land-cover reasoning." style="font-size:15px;line-height:1.55;color:#6e6e73">Uydu ve hava görüntüsü anlama ve arazi örtüsü çıkarımı için ince ayarlı görü-dil modeli.</p>
       </article>
       <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid #e8e8ed;opacity:0;transform:translateY(24px);transition:opacity .7s .08s,transform .7s .08s">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
@@ -374,24 +397,8 @@
           <span data-en="Turkish" style="font-size:12px;color:#86868b">Türkçe</span>
         </div>
         <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px">MedNER-TR</h3>
-        <p data-en="Turkish medical named-entity recognition — extracting drugs, diagnoses and dosages from clinical text." style="font-size:15px;line-height:1.55;color:#6e6e73;margin-bottom:22px">Türkçe tıbbi varlık tanıma — klinik metinden ilaç, tanı ve dozajların çıkarılması.</p>
-        <a href="https://huggingface.co/tugrulkaya" target="_blank" rel="noopener" data-magnetic data-en="Try demo" class="demo-btn" style="display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">Demoyu dene <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <p data-en="Turkish medical named-entity recognition — extracting drugs, diagnoses and dosages from clinical text." style="font-size:15px;line-height:1.55;color:#6e6e73">Türkçe tıbbi varlık tanıma — klinik metinden ilaç, tanı ve dozajların çıkarılması.</p>
       </article>
-    </div>
-
-    <!-- AI demo -->
-    <div data-reveal style="background:#1d1d1f;border-radius:28px;padding:clamp(28px,4vw,48px);color:#fff;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="max-width:760px">
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5b9bff;margin-bottom:16px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3"/></svg><span data-en="Try it · Smart Brief">Hemen dene · Akıllı Brief</span></div>
-        <h3 data-en="Describe an idea. Get an instant approach." style="font-size:clamp(26px,3.4vw,40px);font-weight:600;letter-spacing:-0.03em;line-height:1.08;margin-bottom:14px">Bir fikri anlat. Anında bir yaklaşım al.</h3>
-        <p data-en="A small taste of how we think — type a product idea and our model sketches a starting point." style="font-size:16px;line-height:1.55;color:#a1a1a6;margin-bottom:26px">Nasıl düşündüğümüzün küçük bir örneği — bir ürün fikri yazın, modelimiz bir başlangıç taslağı çıkarsın.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-          <input id="ai-input" type="text" data-en-ph="e.g. An app that identifies plants from a photo" placeholder="ör. Fotoğraftan bitki tanıyan bir uygulama" style="flex:1;min-width:240px;background:#2a2a2e;border:1px solid #3a3a3e;color:#fff;font-family:inherit;font-size:16px;border-radius:14px;padding:15px 18px;outline:none;transition:border-color .2s">
-          <button id="ai-run" data-magnetic style="background:#2563eb;color:#fff;font-family:inherit;font-size:16px;font-weight:500;border:none;border-radius:14px;padding:15px 26px;cursor:pointer;transition:transform .25s,background .2s;will-change:transform"><span data-en="Generate">Oluştur</span></button>
-        </div>
-        <div id="ai-output" style="display:none;background:#26262a;border:1px solid #34343a;border-radius:16px;padding:22px 24px;font-size:15px;line-height:1.7;color:#e3e3e6;white-space:pre-wrap"></div>
-        <div id="ai-hint" data-en="Powered by an on-page model · responses are illustrative" style="font-size:12px;color:#6e6e73;margin-top:14px">Sayfa içi model · yanıtlar örnek niteliğindedir</div>
-      </div>
     </div>
   </div>
 </section>
@@ -400,8 +407,8 @@
 <section id="work" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#fff">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:660px;margin-bottom:56px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Selected work">Seçilmiş işler</span></div>
-      <h2 data-en="Built, shipped, in production." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04">Yapıldı, yayınlandı, sahada.</h2>
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Our references">Referanslarımız</span></div>
+      <h2 data-en="Delivered, shipped, in production." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04">Teslim edildi, yayınlandı, sahada.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px">
 
@@ -464,9 +471,7 @@
         <a href="mailto:hello@arfhause.com" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:#1d1d1f"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid #e8e8ed;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span style="font-size:17px;font-weight:500">hello@arfhause.com</span></a>
         <div style="display:flex;align-items:center;gap:14px;color:#1d1d1f"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid #e8e8ed;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span data-en="Turkey · working globally" style="font-size:17px;font-weight:500">Türkiye · global çalışıyoruz</span></div>
         <div style="display:flex;gap:10px;margin-top:8px">
-          <a href="https://huggingface.co/tugrulkaya" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">HuggingFace</a>
-          <a href="https://github.com/mtkaya" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/arfhause" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -499,8 +504,8 @@
     <div style="display:flex;gap:clamp(16px,2.5vw,30px);flex-wrap:wrap">
       <a href="#services" data-en="Services" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Hizmetler</a>
       <a href="#about" data-en="About" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Hakkımızda</a>
-      <a href="#research" data-en="Research" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Araştırma</a>
-      <a href="#work" data-en="Work" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">İşler</a>
+      <a href="#research" data-en="R&amp;D" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Ar-Ge</a>
+      <a href="#work" data-en="References" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Referanslar</a>
       <a href="#contact" data-en="Contact" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">İletişim</a>
       <a href="privacy-policy.html" data-en="Privacy Policy" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Gizlilik Politikası</a>
     </div>
@@ -512,6 +517,7 @@
 
 <script>
 (function() {
+ try {
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- i18n ----------
@@ -726,48 +732,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScrollStory();
 
-  // ---------- AI demo ----------
-  (function wireAIDemo() {
-    const input = document.getElementById('ai-input');
-    const btn = document.getElementById('ai-run');
-    const out = document.getElementById('ai-output');
-    if (!input || !btn || !out) return;
-
-    function fallback(idea) {
-      const en = currentLang === 'en';
-      const lc = (idea || '').toLowerCase();
-      const ai = /(photo|image|görüntü|foto|tanı|detect|vision|recogn|classif)/.test(lc)
-        ? (en ? 'On-device vision model (Core ML / TFLite) with a server fallback.' : 'Cihaz üstü görü modeli (Core ML / TFLite), sunucu yedeğiyle.')
-        : (en ? 'A fine-tuned language model behind a thin, fast API.' : 'İnce ve hızlı bir API arkasında ince ayarlı bir dil modeli.');
-      if (en) return 'Platform: A cross-platform app (React Native / Flutter) with a lean .NET backend.\nAI: ' + ai + '\nFirst step: A 2-week prototype to validate the core interaction with real users.';
-      return 'Platform: Çapraz platform bir uygulama (React Native / Flutter) ve yalın bir .NET arka uç.\nAI: ' + ai + '\nİlk adım: Çekirdek etkileşimi gerçek kullanıcılarla doğrulayan 2 haftalık bir prototip.';
-    }
-
-    async function run() {
-      const idea = input.value.trim();
-      if (!idea) { input.focus(); return; }
-      const en = currentLang === 'en';
-      out.style.display = 'block';
-      out.textContent = en ? 'Thinking…' : 'Düşünülüyor…';
-      btn.style.opacity = '0.6'; btn.disabled = true;
-      const result = fallback(idea);
-      btn.style.opacity = '1'; btn.disabled = false;
-      if (reduce) { out.textContent = result; return; }
-      out.textContent = '';
-      let i = 0;
-      function type() {
-        out.textContent = result.slice(0, i);
-        i += 2;
-        if (i <= result.length) setTimeout(type, 12);
-        else out.textContent = result;
-      }
-      type();
-    }
-
-    btn.addEventListener('click', run);
-    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); });
-  })();
-
   // ---------- contact form (POST → send-mail.php, JSON response) ----------
   const form = document.getElementById('contact-form');
   if (form) form.addEventListener('submit', async (e) => {
@@ -794,40 +758,15 @@
     }
   });
 
-  // ---------- live stats ----------
-  (async function fetchStats() {
-    function fmt(n) { return n >= 1000 ? ((n / 1000).toFixed(n >= 10000 ? 0 : 1).replace('.0', '') + 'K') : ('' + n); }
-    function set(id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
-    try {
-      const r = await fetch('https://api.github.com/users/mtkaya');
-      if (r.ok) {
-        const d = await r.json();
-        if (typeof d.public_repos === 'number') set('stat-repos', d.public_repos + '+');
-      }
-    } catch(e) {}
-    try {
-      const r2 = await fetch('https://api.github.com/users/mtkaya/repos?per_page=100&sort=updated');
-      if (r2.ok) {
-        const repos = await r2.json();
-        if (Array.isArray(repos)) {
-          const stars = repos.reduce((a, x) => a + (x.stargazers_count || 0), 0);
-          if (stars > 0) set('stat-stars', stars + '+');
-        }
-      }
-    } catch(e) {}
-    try {
-      const r3 = await fetch('https://huggingface.co/api/models?author=tugrulkaya&limit=100&full=true');
-      if (r3.ok) {
-        const models = await r3.json();
-        if (Array.isArray(models) && models.length) {
-          set('stat-models', models.length + '');
-          const dl = models.reduce((a, m) => a + (m.downloads || 0), 0);
-          if (dl > 0) set('stat-downloads', fmt(dl) + '+');
-        }
-      }
-    } catch(e) {}
-  })();
-
+ } catch(err) {
+   // Main script failed — force all content visible so the page is never blank.
+   console.error('[arfhause] init error:', err);
+   try {
+     document.querySelectorAll('[data-reveal]').forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
+     var t=document.getElementById('hero-title');
+     if(t){ t.style.opacity='1'; t.querySelectorAll('span').forEach(function(s){ s.style.opacity='1'; s.style.transform='none'; }); }
+   } catch(e2){}
+ }
 })();
 </script>
 </body>
