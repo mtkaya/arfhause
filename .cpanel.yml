@@ -2,4 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u2553504/public_html/
-    - /bin/rsync -av --delete --exclude='.git' --exclude='.cpanel.yml' --exclude='README.md' --exclude='*.zip' --exclude='.DS_Store' ./ $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp privacy-policy.html $DEPLOYPATH
+    - /bin/cp send-mail.php $DEPLOYPATH
+    - /bin/cp -R bootstrap-3.3.7 $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R phpmailer $DEPLOYPATH
