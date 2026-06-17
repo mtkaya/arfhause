@@ -19,8 +19,8 @@
             --gray-700: #404040;
             --gray-800: #262626;
             --gray-900: #171717;
-            --accent: #6366f1;
-            --accent-light: #818cf8;
+            --accent: #c7f000;
+            --accent-light: #defc55;
         }
 
         * {
@@ -37,7 +37,7 @@
             min-height: 100vh;
             font-family: "Space Grotesk", system-ui, sans-serif;
             background:
-                radial-gradient(circle at 82% 0%, rgba(99, 102, 241, 0.18), transparent 34rem),
+                radial-gradient(circle at 82% 0%, rgba(199, 240, 0, 0.18), transparent 34rem),
                 linear-gradient(180deg, #101010 0%, var(--black) 36rem);
             color: var(--white);
             line-height: 1.7;
@@ -235,7 +235,7 @@
 
         .notice {
             border: 1px solid rgba(129, 140, 248, 0.28);
-            background: rgba(99, 102, 241, 0.09);
+            background: rgba(199, 240, 0, 0.09);
             padding: 1.25rem;
             margin: 1.5rem 0 0;
             color: var(--gray-300);
@@ -322,12 +322,80 @@
             gap: 0.3rem;
             transition: border-color 0.2s ease, background 0.2s ease;
         }
-        .lang-toggle:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.12); }
+        .lang-toggle:hover { border-color: var(--accent); background: rgba(199, 240, 0, 0.12); }
         .lang-toggle .lang-sep { color: var(--gray-700); }
         .lang-toggle[data-active="tr"] .lang-tr,
         .lang-toggle[data-active="en"] .lang-en { color: var(--white); }
     </style>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%236366f1' rx='12' width='100' height='100'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='60' font-weight='800' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23c7f000' rx='12' width='100' height='100'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='60' font-weight='800' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+
+    <!-- ===== Marka teması: SİNYAL // ACID GRID ===== -->
+    <style id="brand-theme">
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --black:    #000000;
+  --white:    #f4f6f2;
+  --gray-100: #e7eae4;
+  --gray-300: #a4aa9c;
+  --gray-400: #828876;
+  --gray-500: #636957;
+  --gray-700: #2c3025;
+  --gray-800: #181a14;
+  --gray-900: #0c0d0a;
+  --accent:       #c7f000;
+  --accent-light: #defc55;
+}
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background:
+    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px) 0 0 / 72px 72px,
+    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px) 0 0 / 72px 72px,
+    #000000;
+  color: var(--gray-200, #c8cdc2);
+}
+
+.brand,
+.hero h1,
+.policy h2 {
+  font-family: 'Space Mono', ui-monospace, monospace;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 { color: var(--white); }
+
+.policy section { border-bottom: 1px solid var(--gray-700); }
+.policy h3 { color: var(--white); }
+.policy a { color: var(--accent); }
+
+.meta-card {
+  border: 1px solid var(--gray-700);
+  border-radius: 0;
+  background: linear-gradient(180deg, var(--gray-900), #000000);
+}
+.meta-label { color: var(--accent); font-family: 'Space Mono', monospace; }
+
+.notice {
+  border: 1px solid var(--gray-700);
+  border-radius: 0;
+  background: var(--gray-900);
+}
+
+.toc { border-left: 1px solid var(--gray-700); }
+.toc a:hover { color: var(--accent); }
+
+.lang-toggle {
+  font-family: 'Space Mono', monospace;
+  border: 1px solid var(--gray-600, #474c3d);
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.lang-toggle:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
+
+::selection { background: var(--accent); color: #000000; }
+    </style>
 </head>
 <body>
     <div class="noise" aria-hidden="true"></div>
