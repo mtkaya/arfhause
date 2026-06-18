@@ -152,7 +152,7 @@
 </nav>
 
 <!-- ===================== HERO ===================== -->
-<header style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px clamp(20px,5vw,40px) 100px">
+<header style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px clamp(20px,5vw,40px) 100px;overflow:hidden">
   <div id="hero-glow" style="position:absolute;top:38%;left:50%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.12),rgba(37,99,235,0) 65%);transform:translate(-50%,-50%);pointer-events:none;filter:blur(10px);transition:transform .35s ease-out;z-index:0"></div>
   <div style="position:relative;z-index:1;max-width:1000px">
     <div data-reveal style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s">
@@ -511,6 +511,8 @@
     </div>
 
     <form id="contact-form" data-reveal action="send-mail.php" method="post" style="background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(26px,4vw,40px);opacity:0;transform:translateY(24px);transition:opacity .8s .1s,transform .8s .1s">
+      <!-- spam honeypot: gerçek kullanıcılar görmez/doldurmaz, botlar doldurur -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
       <div style="display:flex;flex-direction:column;gap:18px">
         <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Name" style="font-size:13px;font-weight:600;color:var(--ink)">Ad Soyad</span><input name="name" type="text" required style="background:var(--surface);border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,background .2s"></label>
         <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Email" style="font-size:13px;font-weight:600;color:var(--ink)">E-posta</span><input name="email" type="email" required style="background:var(--surface);border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,background .2s"></label>

@@ -24,6 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+// Spam korumasi: honeypot. Gercek kullanici bu gizli alani gormez/doldurmaz;
+// botlar doldurur. Doluysa botu sessizce "basarili" kabul edip cikiyoruz
+// (boylece bot honeypot'u fark edip tekrar denemez, mail de atilmaz).
+if (!empty($_POST["website"])) {
+    echo json_encode(["success" => true, "message" => "Mesajiniz gonderildi!"]);
+    exit;
+}
+
 // Form verileri (alan adi hem "project-type" hem "project_type" kabul edilir)
 $name    = isset($_POST["name"]) ? strip_tags(trim($_POST["name"])) : '';
 $email   = isset($_POST["email"]) ? filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL) : '';
