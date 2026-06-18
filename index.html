@@ -10,14 +10,48 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://arfhause.com/">
+<meta property="og:url" content="https://arfhause.com/">
+<meta property="og:site_name" content="Arfhause">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://arfhause.com/images/og-cover.png">
+<meta name="twitter:image" content="https://arfhause.com/images/og-cover.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%232563eb'/%3E%3Ctext%20x='16'%20y='23'%20font-family='Helvetica,Arial,sans-serif'%20font-size='20'%20font-weight='700'%20fill='white'%20text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Arfhause",
+  "url": "https://arfhause.com/",
+  "logo": "https://arfhause.com/images/og-cover.png",
+  "image": "https://arfhause.com/images/og-cover.png",
+  "description": "Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.",
+  "email": "hello@arfhause.com",
+  "foundingDate": "2020",
+  "address": { "@type": "PostalAddress", "addressCountry": "TR" },
+  "sameAs": ["https://www.linkedin.com/company/arfhause"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --accent:#2563eb;
+    --accent-hover:#1d4fd8;
+    --ink:#1d1d1f;
+    --muted:#6e6e73;
+    --faint:#767679;
+    --surface:#f5f5f7;
+    --line:#e8e8ed;
+    --line-strong:#d2d2d7;
+  }
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  body{font-family:'Geist',-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;color:#1d1d1f;background:#fff;overflow-x:hidden}
-  ::selection{background:#2563eb;color:#fff}
+  body{font-family:'Geist',-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+  ::selection{background:var(--accent);color:#fff}
   a{color:inherit}
 
   @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
@@ -28,20 +62,20 @@
   /* Nav link hover */
   #nav-links a:hover{opacity:1!important}
   /* Lang btn hover */
-  #lang-btn:hover{border-color:#1d1d1f!important}
+  #lang-btn:hover{border-color:var(--ink)!important}
   /* Footer links hover */
-  footer a:hover{color:#1d1d1f!important}
+  footer a:hover{color:var(--ink)!important}
   /* Pill outline links hover */
-  .pill-outline:hover{border-color:#1d1d1f!important}
+  .pill-outline:hover{border-color:var(--ink)!important}
   /* Primary CTA hover */
-  .btn-primary:hover{background:#1d4fd8!important}
+  .btn-primary:hover{background:var(--accent-hover)!important}
   /* Ghost CTA hover */
-  .btn-ghost:hover{border-color:#1d1d1f!important;background:#f5f5f7!important}
+  .btn-ghost:hover{border-color:var(--ink)!important;background:var(--surface)!important}
 
   /* Focus styles for form elements */
   input:focus,textarea:focus,select:focus{
-    border-color:#2563eb!important;
-    background:#fff!important;
+    border-color:var(--accent)!important;
+    background-color:#fff!important;
     outline:none;
   }
 
@@ -54,10 +88,10 @@
   .work-card.light-card:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.18)!important}
 
   /* Research demo button hover */
-  .demo-btn:hover{border-color:#1d1d1f!important}
+  .demo-btn:hover{border-color:var(--ink)!important}
 
   /* Submit button hover */
-  #contact-submit:hover{background:#1d4fd8!important}
+  #contact-submit:hover{background:var(--accent-hover)!important}
 
   @media (max-width:860px){
     #nav-links{display:none!important}
@@ -104,16 +138,16 @@
 
 <!-- ===================== NAV ===================== -->
 <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(16px,4vw,44px);border-bottom:1px solid transparent;transition:background .45s ease,backdrop-filter .45s ease,border-color .45s ease,padding .45s ease">
-  <a href="#top" style="font-size:21px;font-weight:600;letter-spacing:-0.03em;text-decoration:none;color:#1d1d1f">Arfhause</a>
+  <a href="#top" style="font-size:21px;font-weight:600;letter-spacing:-0.03em;text-decoration:none;color:var(--ink)">Arfhause</a>
   <div id="nav-links" style="display:flex;align-items:center;gap:clamp(20px,2.6vw,36px)">
-    <a href="#services" data-en="Services" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Hizmetler</a>
-    <a href="#about" data-en="About" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Hakkımızda</a>
-    <a href="#research" data-en="R&amp;D" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Ar-Ge</a>
-    <a href="#work" data-en="References" style="font-size:15px;font-weight:450;text-decoration:none;color:#1d1d1f;opacity:.85;transition:opacity .2s">Referanslar</a>
+    <a href="#services" data-en="Services" style="font-size:15px;font-weight:450;text-decoration:none;color:var(--ink);opacity:.85;transition:opacity .2s">Hizmetler</a>
+    <a href="#about" data-en="About" style="font-size:15px;font-weight:450;text-decoration:none;color:var(--ink);opacity:.85;transition:opacity .2s">Hakkımızda</a>
+    <a href="#research" data-en="R&amp;D" style="font-size:15px;font-weight:450;text-decoration:none;color:var(--ink);opacity:.85;transition:opacity .2s">Ar-Ge</a>
+    <a href="#work" data-en="References" style="font-size:15px;font-weight:450;text-decoration:none;color:var(--ink);opacity:.85;transition:opacity .2s">Referanslar</a>
   </div>
   <div style="display:flex;align-items:center;gap:14px">
-    <button id="lang-btn" aria-label="Switch language" style="border:1px solid #d2d2d7;background:transparent;color:#1d1d1f;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:0.04em;border-radius:980px;padding:7px 14px;cursor:pointer;transition:border-color .2s,background .2s">EN</button>
-    <a href="#contact" data-magnetic data-en="Let's talk" class="btn-primary" style="display:inline-block;background:#2563eb;color:#fff;font-size:14px;font-weight:500;text-decoration:none;border-radius:980px;padding:9px 18px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;will-change:transform">İletişim</a>
+    <button id="lang-btn" aria-label="Switch language" style="border:1px solid var(--line-strong);background:transparent;color:var(--ink);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:0.04em;border-radius:980px;padding:7px 14px;cursor:pointer;transition:border-color .2s,background .2s">EN</button>
+    <a href="#contact" data-magnetic data-en="Let's talk" class="btn-primary" style="display:inline-block;background:var(--accent);color:#fff;font-size:14px;font-weight:500;text-decoration:none;border-radius:980px;padding:9px 18px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;will-change:transform">İletişim</a>
   </div>
 </nav>
 
@@ -121,20 +155,20 @@
 <header style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px clamp(20px,5vw,40px) 100px">
   <div id="hero-glow" style="position:absolute;top:38%;left:50%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.12),rgba(37,99,235,0) 65%);transform:translate(-50%,-50%);pointer-events:none;filter:blur(10px);transition:transform .35s ease-out;z-index:0"></div>
   <div style="position:relative;z-index:1;max-width:1000px">
-    <div data-reveal style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:28px;opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s">
-      <span style="width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block;animation:breathe 3s ease-in-out infinite"></span>
+    <div data-reveal style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:breathe 3s ease-in-out infinite"></span>
       <span data-en="Mobile &amp; AI Studio">Mobil &amp; Yapay Zekâ Stüdyosu</span>
     </div>
-    <h1 id="hero-title" data-en="We craft intelligent experiences." style="font-size:clamp(44px,8vw,104px);font-weight:600;letter-spacing:-0.045em;line-height:0.98;color:#1d1d1f;margin-bottom:30px">Akıllı dijital deneyimler.</h1>
-    <p data-reveal data-en="A boutique software studio specializing in mobile development and artificial intelligence." style="font-size:clamp(18px,2.2vw,23px);font-weight:400;line-height:1.5;color:#6e6e73;max-width:620px;margin:0 auto 40px;opacity:0;transform:translateY(18px);transition:opacity .8s .15s,transform .8s .15s">Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.</p>
+    <h1 id="hero-title" data-en="We craft intelligent experiences." style="font-size:clamp(44px,8vw,104px);font-weight:600;letter-spacing:-0.045em;line-height:0.98;color:var(--ink);margin-bottom:30px">Akıllı dijital deneyimler.</h1>
+    <p data-reveal data-en="A boutique software studio specializing in mobile development and artificial intelligence." style="font-size:clamp(18px,2.2vw,23px);font-weight:400;line-height:1.5;color:var(--muted);max-width:620px;margin:0 auto 40px;opacity:0;transform:translateY(18px);transition:opacity .8s .15s,transform .8s .15s">Mobil geliştirme ve yapay zekâ alanında uzmanlaşmış butik bir yazılım stüdyosu.</p>
     <div data-reveal style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity .8s .3s,transform .8s .3s">
-      <a href="#contact" data-magnetic data-en="Let's talk" class="btn-primary" style="background:#2563eb;color:#fff;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 30px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;will-change:transform">Projeni konuşalım</a>
-      <a href="#work" data-en="See our references" class="btn-ghost" style="color:#1d1d1f;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 26px;border:1px solid #d2d2d7;transition:border-color .2s,background .2s">Referansları gör</a>
+      <a href="#contact" data-magnetic data-en="Let's talk" class="btn-primary" style="background:var(--accent);color:#fff;font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 30px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;will-change:transform">Projeni konuşalım</a>
+      <a href="#work" data-en="See our references" class="btn-ghost" style="color:var(--ink);font-size:16px;font-weight:500;text-decoration:none;border-radius:980px;padding:14px 26px;border:1px solid var(--line-strong);transition:border-color .2s,background .2s">Referansları gör</a>
     </div>
   </div>
-  <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#86868b">
+  <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--faint)">
     <span data-en="Scroll" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase">Kaydır</span>
-    <div style="width:1px;height:36px;background:linear-gradient(#d2d2d7,transparent)"></div>
+    <div style="width:1px;height:36px;background:linear-gradient(var(--line-strong),transparent)"></div>
   </div>
 </header>
 
@@ -142,22 +176,22 @@
 <section id="services" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#fff">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:660px;margin-bottom:64px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="What we do">Ne yapıyoruz</span></div>
+      <div class="eyebrow"><span data-en="What we do">Ne yapıyoruz</span></div>
       <h2 data-en="Capabilities, end to end." style="font-size:clamp(34px,5.2vw,60px);font-weight:600;letter-spacing:-0.035em;line-height:1.03">Uçtan uca yetkinlik.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
 
-      <article data-reveal data-tilt style="grid-column:span 1;background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="grid-column:span 1;background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><line x1="11" y1="18.5" x2="13" y2="18.5"></line></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><line x1="11" y1="18.5" x2="13" y2="18.5"></line></svg>
         </div>
         <div>
           <h3 data-en="Mobile Development" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">Mobil Geliştirme</h3>
-          <p data-en="Native iOS &amp; Android, Flutter &amp; React Native, App Store launch." style="font-size:15px;line-height:1.55;color:#6e6e73">Native iOS &amp; Android, Flutter &amp; React Native, App Store yayını.</p>
+          <p data-en="Native iOS &amp; Android, Flutter &amp; React Native, App Store launch." style="font-size:15px;line-height:1.55;color:var(--muted)">Native iOS &amp; Android, Flutter &amp; React Native, App Store yayını.</p>
         </div>
       </article>
 
-      <article data-reveal data-tilt class="dark-card" style="background:#1d1d1f;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;opacity:0;transform:translateY(24px);transition:opacity .7s .05s,transform .7s .05s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt class="dark-card" style="background:var(--ink);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;opacity:0;transform:translateY(24px);transition:opacity .7s .05s,transform .7s .05s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path><circle cx="12" cy="12" r="3"></circle></svg>
         </div>
@@ -167,53 +201,53 @@
         </div>
       </article>
 
-      <article data-reveal data-tilt style="background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .1s,transform .7s .1s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .1s,transform .7s .1s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 7 3.5 12 8 17"></polyline><polyline points="16 7 20.5 12 16 17"></polyline></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 7 3.5 12 8 17"></polyline><polyline points="16 7 20.5 12 16 17"></polyline></svg>
         </div>
         <div>
           <h3 data-en="Custom Software" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">Özel Yazılım</h3>
-          <p data-en="Tailored platforms, APIs and integrations built to last." style="font-size:15px;line-height:1.55;color:#6e6e73">Ölçeklenen platformlar, API'ler ve entegrasyonlar.</p>
+          <p data-en="Tailored platforms, APIs and integrations built to last." style="font-size:15px;line-height:1.55;color:var(--muted)">Ölçeklenen platformlar, API'ler ve entegrasyonlar.</p>
         </div>
       </article>
 
-      <article data-reveal data-tilt style="background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l4 4L8 20l-4 1 1-4L15 5z"></path></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l4 4L8 20l-4 1 1-4L15 5z"></path></svg>
         </div>
         <div>
           <h3 data-en="UI/UX Design" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">UI/UX Tasarım</h3>
-          <p data-en="Interfaces with clarity, rhythm and restraint." style="font-size:15px;line-height:1.55;color:#6e6e73">Netlik, ritim ve sadelikle arayüzler.</p>
+          <p data-en="Interfaces with clarity, rhythm and restraint." style="font-size:15px;line-height:1.55;color:var(--muted)">Netlik, ritim ve sadelikle arayüzler.</p>
         </div>
       </article>
 
-      <article data-reveal data-tilt style="background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .05s,transform .7s .05s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .05s,transform .7s .05s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17.5A4.5 4.5 0 016 8.6 5.5 5.5 0 0117 9.5a3.5 3.5 0 01-.5 8H7z"></path></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17.5A4.5 4.5 0 016 8.6 5.5 5.5 0 0117 9.5a3.5 3.5 0 01-.5 8H7z"></path></svg>
         </div>
         <div>
           <h3 data-en="Cloud &amp; DevOps" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">Cloud &amp; DevOps</h3>
-          <p data-en="Resilient infrastructure, CI/CD, observability." style="font-size:15px;line-height:1.55;color:#6e6e73">Dayanıklı altyapı, CI/CD, gözlemlenebilirlik.</p>
+          <p data-en="Resilient infrastructure, CI/CD, observability." style="font-size:15px;line-height:1.55;color:var(--muted)">Dayanıklı altyapı, CI/CD, gözlemlenebilirlik.</p>
         </div>
       </article>
 
-      <article data-reveal data-tilt style="background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .1s,transform .7s .1s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .1s,transform .7s .1s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="20" x2="5" y2="13"></line><line x1="12" y1="20" x2="12" y2="6"></line><line x1="19" y1="20" x2="19" y2="10"></line></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="20" x2="5" y2="13"></line><line x1="12" y1="20" x2="12" y2="6"></line><line x1="19" y1="20" x2="19" y2="10"></line></svg>
         </div>
         <div>
           <h3 data-en="Data Analytics" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">Veri Analitiği</h3>
-          <p data-en="From raw data to decisions: pipelines &amp; dashboards." style="font-size:15px;line-height:1.55;color:#6e6e73">Ham veriden karara: pipeline'lar ve panolar.</p>
+          <p data-en="From raw data to decisions: pipelines &amp; dashboards." style="font-size:15px;line-height:1.55;color:var(--muted)">Ham veriden karara: pipeline'lar ve panolar.</p>
         </div>
       </article>
 
-      <article data-reveal data-tilt style="background:#f5f5f7;border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .15s,transform .7s .15s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt style="background:var(--surface);border-radius:24px;padding:34px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(24px);transition:opacity .7s .15s,transform .7s .15s,box-shadow .35s;will-change:transform">
         <div style="width:46px;height:46px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0116 0v4a2 2 0 01-2 2h-1v-6h3M4 12v4a2 2 0 002 2h1v-6H4"></path></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0116 0v4a2 2 0 01-2 2h-1v-6h3M4 12v4a2 2 0 002 2h1v-6H4"></path></svg>
         </div>
         <div>
           <h3 data-en="Support &amp; Maintenance" style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px">Destek &amp; Bakım</h3>
-          <p data-en="24/7 monitoring, updates and continuous improvement." style="font-size:15px;line-height:1.55;color:#6e6e73">7/24 izleme, güncelleme ve sürekli iyileştirme.</p>
+          <p data-en="24/7 monitoring, updates and continuous improvement." style="font-size:15px;line-height:1.55;color:var(--muted)">7/24 izleme, güncelleme ve sürekli iyileştirme.</p>
         </div>
       </article>
 
@@ -222,62 +256,62 @@
 </section>
 
 <!-- ===================== STORY (pinned iPhone) ===================== -->
-<section id="story-wrap" style="position:relative;height:260vh;background:#f5f5f7">
+<section id="story-wrap" style="position:relative;height:260vh;background:var(--surface)">
   <div id="story-sticky" style="position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden">
     <div id="story-grid" style="max-width:1180px;margin:0 auto;width:100%;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
 
       <!-- Captions column -->
       <div style="display:flex;flex-direction:column;justify-content:center;gap:36px;min-height:560px">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb"><span data-en="From idea to product">Fikirden ürüne</span></div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent)"><span data-en="From idea to product">Fikirden ürüne</span></div>
 
         <div style="position:relative;min-height:230px">
           <div class="story-caption" data-cap="0" style="position:absolute;top:0;left:0;right:0;transition:opacity .5s,transform .5s">
             <h2 data-en="Mobile, refined." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">İncelikli mobil.</h2>
-            <p data-en="Apps that feel native to the platform and effortless in the hand — offline-first, fast, considered." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Platforma ait hissettiren, elde zahmetsiz uygulamalar — çevrimdışı öncelikli, hızlı, özenli.</p>
+            <p data-en="Apps that feel native to the platform and effortless in the hand — offline-first, fast, considered." style="font-size:19px;line-height:1.55;color:var(--muted);max-width:440px">Platforma ait hissettiren, elde zahmetsiz uygulamalar — çevrimdışı öncelikli, hızlı, özenli.</p>
           </div>
 
           <div class="story-caption" data-cap="1" style="position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
             <h2 data-en="Intelligence, applied." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Uygulanan zekâ.</h2>
-            <p data-en="Vision and language models that turn messy real-world data into clear, timely decisions." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık gerçek dünya verisini net ve zamanında kararlara çeviren görü ve dil modelleri.</p>
+            <p data-en="Vision and language models that turn messy real-world data into clear, timely decisions." style="font-size:19px;line-height:1.55;color:var(--muted);max-width:440px">Karmaşık gerçek dünya verisini net ve zamanında kararlara çeviren görü ve dil modelleri.</p>
           </div>
 
           <div class="story-caption" data-cap="2" style="position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s">
             <h2 data-en="Enterprise, simplified." style="font-size:clamp(32px,4.6vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.03;margin-bottom:18px">Sadeleşen kurumsal.</h2>
-            <p data-en="Complex operations — HR, workflows, fleets — brought into one calm, modern interface." style="font-size:19px;line-height:1.55;color:#6e6e73;max-width:440px">Karmaşık operasyonlar — İK, iş akışları, filolar — tek, sakin ve modern bir arayüzde.</p>
+            <p data-en="Complex operations — HR, workflows, fleets — brought into one calm, modern interface." style="font-size:19px;line-height:1.55;color:var(--muted);max-width:440px">Karmaşık operasyonlar — İK, iş akışları, filolar — tek, sakin ve modern bir arayüzde.</p>
           </div>
         </div>
 
         <div style="display:flex;gap:8px">
-          <span class="story-dot" data-dot="0" style="width:26px;height:4px;border-radius:980px;background:#1d1d1f;transition:background .4s,width .4s"></span>
-          <span class="story-dot" data-dot="1" style="width:18px;height:4px;border-radius:980px;background:#d2d2d7;transition:background .4s,width .4s"></span>
-          <span class="story-dot" data-dot="2" style="width:18px;height:4px;border-radius:980px;background:#d2d2d7;transition:background .4s,width .4s"></span>
+          <span class="story-dot" data-dot="0" style="width:26px;height:4px;border-radius:980px;background:var(--ink);transition:background .4s,width .4s"></span>
+          <span class="story-dot" data-dot="1" style="width:18px;height:4px;border-radius:980px;background:var(--line-strong);transition:background .4s,width .4s"></span>
+          <span class="story-dot" data-dot="2" style="width:18px;height:4px;border-radius:980px;background:var(--line-strong);transition:background .4s,width .4s"></span>
         </div>
       </div>
 
       <!-- Phone column -->
       <div style="display:flex;justify-content:center;align-items:center">
-        <div style="position:relative;width:300px;height:614px;background:#1d1d1f;border-radius:54px;padding:11px;box-shadow:0 50px 90px -40px rgba(0,0,0,0.45),0 8px 24px -10px rgba(0,0,0,0.25)">
+        <div style="position:relative;width:300px;height:614px;background:var(--ink);border-radius:54px;padding:11px;box-shadow:0 50px 90px -40px rgba(0,0,0,0.45),0 8px 24px -10px rgba(0,0,0,0.25)">
           <div style="position:absolute;top:0;left:0;right:0;bottom:0;border-radius:54px;border:1.5px solid rgba(255,255,255,.06);pointer-events:none"></div>
           <div style="position:relative;width:100%;height:100%;border-radius:44px;overflow:hidden;background:#fff">
-            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:96px;height:30px;background:#1d1d1f;border-radius:980px;z-index:30"></div>
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:96px;height:30px;background:var(--ink);border-radius:980px;z-index:30"></div>
 
             <!-- SCREEN 0: Vagara mobile -->
             <div class="phone-screen" data-screen="0" style="position:absolute;inset:0;background:#fff;transition:opacity .55s ease,transform .55s ease;z-index:10">
               <div style="padding:46px 18px 0">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-                  <div><div style="font-size:11px;color:#86868b;font-weight:500">Vagara</div><div style="font-size:19px;font-weight:600;letter-spacing:-0.02em">Karatay Trail</div></div>
-                  <div style="width:34px;height:34px;border-radius:50%;background:#f5f5f7;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg></div>
+                  <div><div style="font-size:11px;color:var(--faint);font-weight:500">Vagara</div><div style="font-size:19px;font-weight:600;letter-spacing:-0.02em">Karatay Trail</div></div>
+                  <div style="width:34px;height:34px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg></div>
                 </div>
                 <div style="position:relative;height:248px;border-radius:20px;overflow:hidden;background:linear-gradient(150deg,#e3f0e8,#dfeaf5 55%,#eef0e6)">
                   <svg viewBox="0 0 240 248" width="100%" height="100%" preserveAspectRatio="none"><path d="M20 230 C60 180 40 140 90 120 S160 90 150 50 200 40 220 20" fill="none" stroke="#2f9e6e" stroke-width="3.5" stroke-dasharray="2 8" stroke-linecap="round"/><circle cx="20" cy="230" r="7" fill="#2f9e6e"/><circle cx="220" cy="20" r="7" fill="#fff" stroke="#2f9e6e" stroke-width="3"/></svg>
                   <div style="position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:14px;padding:10px 13px;box-shadow:0 8px 22px -10px rgba(0,0,0,.25)">
-                    <div style="font-size:11px;color:#86868b">8.2 km · 320 m ↑</div>
+                    <div style="font-size:11px;color:var(--faint)">8.2 km · 320 m ↑</div>
                     <div style="font-size:14px;font-weight:600">~2s 40dk · Orta</div>
                   </div>
                 </div>
                 <div style="display:flex;gap:8px;margin-top:14px">
-                  <div style="flex:1;background:#f5f5f7;border-radius:14px;padding:12px"><div style="font-size:11px;color:#86868b">Tür keşfi</div><div style="font-size:15px;font-weight:600">14 canlı</div></div>
-                  <div style="flex:1;background:#f5f5f7;border-radius:14px;padding:12px"><div style="font-size:11px;color:#86868b">Rozet</div><div style="font-size:15px;font-weight:600;color:#2563eb">Altın III</div></div>
+                  <div style="flex:1;background:var(--surface);border-radius:14px;padding:12px"><div style="font-size:11px;color:var(--faint)">Tür keşfi</div><div style="font-size:15px;font-weight:600">14 canlı</div></div>
+                  <div style="flex:1;background:var(--surface);border-radius:14px;padding:12px"><div style="font-size:11px;color:var(--faint)">Rozet</div><div style="font-size:15px;font-weight:600;color:var(--accent)">Altın III</div></div>
                 </div>
               </div>
             </div>
@@ -293,7 +327,7 @@
                   <svg viewBox="0 0 250 56" width="100%" height="56" style="margin-top:4px"><polyline points="0,44 30,40 60,42 90,30 120,34 150,22 180,26 210,14 250,18" fill="none" stroke="#5b9bff" stroke-width="2.5"/><polyline points="0,52 250,52" stroke="#26303d" stroke-width="1"/></svg>
                 </div>
                 <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
-                  <div style="display:flex;align-items:center;justify-content:between;gap:10px;background:#151b24;border-radius:13px;padding:11px 13px"><div style="width:8px;height:8px;border-radius:50%;background:#ff5d5d"></div><div style="flex:1"><div style="font-size:13px;font-weight:600">42 KON 318</div><div style="font-size:11px;color:#7d8694">Fren sistemi · 4 gün</div></div><div style="font-size:13px;color:#ff5d5d;font-weight:600">81%</div></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:#151b24;border-radius:13px;padding:11px 13px"><div style="width:8px;height:8px;border-radius:50%;background:#ff5d5d"></div><div style="flex:1"><div style="font-size:13px;font-weight:600">42 KON 318</div><div style="font-size:11px;color:#7d8694">Fren sistemi · 4 gün</div></div><div style="font-size:13px;color:#ff5d5d;font-weight:600">81%</div></div>
                   <div style="display:flex;align-items:center;gap:10px;background:#151b24;border-radius:13px;padding:11px 13px"><div style="width:8px;height:8px;border-radius:50%;background:#f5b53d"></div><div style="flex:1"><div style="font-size:13px;font-weight:600">06 KON 047</div><div style="font-size:11px;color:#7d8694">Şanzıman · 19 gün</div></div><div style="font-size:13px;color:#f5b53d;font-weight:600">47%</div></div>
                 </div>
               </div>
@@ -302,17 +336,17 @@
             <!-- SCREEN 2: BirleşikHR enterprise -->
             <div class="phone-screen" data-screen="2" style="position:absolute;inset:0;background:#fff;opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;z-index:1">
               <div style="padding:46px 18px 0">
-                <div style="font-size:11px;color:#86868b;font-weight:500">BirleşikHR</div>
+                <div style="font-size:11px;color:var(--faint);font-weight:500">BirleşikHR</div>
                 <div style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin-bottom:16px">İK Panosu</div>
                 <div style="display:flex;gap:8px;margin-bottom:12px">
-                  <div style="flex:1;background:#2563eb;color:#fff;border-radius:16px;padding:14px"><div style="font-size:11px;opacity:.8">Aktif personel</div><div style="font-size:24px;font-weight:600;letter-spacing:-0.02em">248</div></div>
-                  <div style="flex:1;background:#f5f5f7;border-radius:16px;padding:14px"><div style="font-size:11px;color:#86868b">İzinde</div><div style="font-size:24px;font-weight:600;letter-spacing:-0.02em">12</div></div>
+                  <div style="flex:1;background:var(--accent);color:#fff;border-radius:16px;padding:14px"><div style="font-size:11px;opacity:.8">Aktif personel</div><div style="font-size:24px;font-weight:600;letter-spacing:-0.02em">248</div></div>
+                  <div style="flex:1;background:var(--surface);border-radius:16px;padding:14px"><div style="font-size:11px;color:var(--faint)">İzinde</div><div style="font-size:24px;font-weight:600;letter-spacing:-0.02em">12</div></div>
                 </div>
-                <div style="background:#f5f5f7;border-radius:16px;padding:14px;margin-bottom:12px"><div style="font-size:12px;color:#86868b;margin-bottom:10px">Bekleyen onaylar</div>
-                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="width:30px;height:30px;border-radius:50%;background:#dfe7fb;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#2563eb">AK</div><div style="flex:1"><div style="font-size:13px;font-weight:600">Yıllık izin · 3 gün</div><div style="font-size:11px;color:#86868b">Ayşe K.</div></div><div style="width:24px;height:24px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
-                  <div style="display:flex;align-items:center;gap:10px"><div style="width:30px;height:30px;border-radius:50%;background:#fbe7df;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#d4622a">MT</div><div style="flex:1"><div style="font-size:13px;font-weight:600">Avans talebi</div><div style="font-size:11px;color:#86868b">Mehmet T.</div></div><div style="width:24px;height:24px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                <div style="background:var(--surface);border-radius:16px;padding:14px;margin-bottom:12px"><div style="font-size:12px;color:var(--faint);margin-bottom:10px">Bekleyen onaylar</div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="width:30px;height:30px;border-radius:50%;background:#dfe7fb;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent)">AK</div><div style="flex:1"><div style="font-size:13px;font-weight:600">Yıllık izin · 3 gün</div><div style="font-size:11px;color:var(--faint)">Ayşe K.</div></div><div style="width:24px;height:24px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div style="display:flex;align-items:center;gap:10px"><div style="width:30px;height:30px;border-radius:50%;background:#fbe7df;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#d4622a">MT</div><div style="flex:1"><div style="font-size:13px;font-weight:600">Avans talebi</div><div style="font-size:11px;color:var(--faint)">Mehmet T.</div></div><div style="width:24px;height:24px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
                 </div>
-                <div style="display:flex;align-items:center;justify-content:space-between;background:#f5f5f7;border-radius:16px;padding:13px 14px"><div style="font-size:13px;font-weight:600">Bordro · Haziran</div><div style="font-size:12px;color:#2f9e6e;font-weight:600">Tamamlandı</div></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface);border-radius:16px;padding:13px 14px"><div style="font-size:13px;font-weight:600">Bordro · Haziran</div><div style="font-size:12px;color:#2f9e6e;font-weight:600">Tamamlandı</div></div>
               </div>
             </div>
 
@@ -328,76 +362,76 @@
 <section id="about" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#fff">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:760px;margin-bottom:72px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Who we are">Biz kimiz</span></div>
+      <div class="eyebrow"><span data-en="Who we are">Biz kimiz</span></div>
       <h2 data-en="A small team, obsessed with the details." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;margin-bottom:24px">Küçük bir ekip, detaylara takıntılı.</h2>
-      <p data-en="We are engineers, designers and strategists based in Turkey, working with clients worldwide. We take few projects at a time, and we ship things we are proud to put our name on." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:#6e6e73">Türkiye merkezli, dünya genelinde çalışan mühendisler, tasarımcılar ve stratejistleriz. Az sayıda iş alır, adımızı koymaktan gurur duyduğumuz ürünler yayınlarız.</p>
+      <p data-en="We are engineers, designers and strategists based in Turkey, working with clients worldwide. We take few projects at a time, and we ship things we are proud to put our name on." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:var(--muted)">Türkiye merkezli, dünya genelinde çalışan mühendisler, tasarımcılar ve stratejistleriz. Az sayıda iş alır, adımızı koymaktan gurur duyduğumuz ürünler yayınlarız.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#e8e8ed;border:1px solid #e8e8ed;border-radius:24px;overflow:hidden">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden">
       <div data-reveal style="background:#fff;padding:38px 28px;opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s">
-        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:#1d1d1f"><span data-count="15" data-suffix="+">0</span></div>
-        <div data-en="Projects delivered" style="font-size:15px;color:#6e6e73;margin-top:6px">Teslim edilen proje</div>
+        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:var(--ink)"><span data-count="15" data-suffix="+">0</span></div>
+        <div data-en="Projects delivered" style="font-size:15px;color:var(--muted);margin-top:6px">Teslim edilen proje</div>
       </div>
       <div data-reveal style="background:#fff;padding:38px 28px;opacity:0;transform:translateY(20px);transition:opacity .7s .05s,transform .7s .05s">
-        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:#1d1d1f"><span data-count="7">0</span></div>
-        <div data-en="Open-source AI models" style="font-size:15px;color:#6e6e73;margin-top:6px">Açık kaynak AI modeli</div>
+        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:var(--ink)"><span data-count="7">0</span></div>
+        <div data-en="Open-source AI models" style="font-size:15px;color:var(--muted);margin-top:6px">Açık kaynak AI modeli</div>
       </div>
       <div data-reveal style="background:#fff;padding:38px 28px;opacity:0;transform:translateY(20px);transition:opacity .7s .1s,transform .7s .1s">
-        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:#1d1d1f"><span data-count="6" data-suffix="+">0</span></div>
-        <div data-en="Years of experience" style="font-size:15px;color:#6e6e73;margin-top:6px">Yıllık deneyim</div>
+        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:var(--ink)"><span data-count="6" data-suffix="+">0</span></div>
+        <div data-en="Years of experience" style="font-size:15px;color:var(--muted);margin-top:6px">Yıllık deneyim</div>
       </div>
       <div data-reveal style="background:#fff;padding:38px 28px;opacity:0;transform:translateY(20px);transition:opacity .7s .15s,transform .7s .15s">
-        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:#1d1d1f">24/7</div>
-        <div data-en="Support &amp; monitoring" style="font-size:15px;color:#6e6e73;margin-top:6px">Destek &amp; izleme</div>
+        <div style="font-size:clamp(40px,5vw,60px);font-weight:600;letter-spacing:-0.04em;color:var(--ink)">24/7</div>
+        <div data-en="Support &amp; monitoring" style="font-size:15px;color:var(--muted);margin-top:6px">Destek &amp; izleme</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== R&D & AI ===================== -->
-<section id="research" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#f5f5f7">
+<section id="research" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:var(--surface)">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:720px;margin-bottom:48px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="R&amp;D &amp; AI">Ar-Ge &amp; Yapay Zekâ</span></div>
+      <div class="eyebrow"><span data-en="R&amp;D &amp; AI">Ar-Ge &amp; Yapay Zekâ</span></div>
       <h2 data-en="We turn research into product." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;margin-bottom:20px">Ar-Ge'yi ürüne dönüştürüyoruz.</h2>
-      <p data-en="Dedicated R&amp;D in computer vision and language models — work that feeds directly into the products we ship for our clients." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:#6e6e73">Bilgisayarlı görü ve dil modelleri üzerine kendi Ar-Ge'miz — doğrudan müşterilerimize sunduğumuz ürünleri besleyen çalışmalar.</p>
+      <p data-en="Dedicated R&amp;D in computer vision and language models — work that feeds directly into the products we ship for our clients." style="font-size:clamp(18px,2vw,21px);line-height:1.6;color:var(--muted)">Bilgisayarlı görü ve dil modelleri üzerine kendi Ar-Ge'miz — doğrudan müşterilerimize sunduğumuz ürünleri besleyen çalışmalar.</p>
     </div>
 
     <!-- capability stats band (static) -->
     <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-bottom:48px;opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s">
-      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
+      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid var(--line)">
         <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">7</div>
-        <div data-en="AI models in production" style="font-size:14px;color:#6e6e73;margin-top:6px">Üretimdeki AI modeli</div>
+        <div data-en="AI models in production" style="font-size:14px;color:var(--muted);margin-top:6px">Üretimdeki AI modeli</div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
+      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid var(--line)">
         <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">396K</div>
-        <div data-en="Work orders processed" style="font-size:14px;color:#6e6e73;margin-top:6px">İşlenen iş emri</div>
+        <div data-en="Work orders processed" style="font-size:14px;color:var(--muted);margin-top:6px">İşlenen iş emri</div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
+      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid var(--line)">
         <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em">0.82</div>
-        <div data-en="Prediction model AUC" style="font-size:14px;color:#6e6e73;margin-top:6px">Tahmin modeli AUC</div>
+        <div data-en="Prediction model AUC" style="font-size:14px;color:var(--muted);margin-top:6px">Tahmin modeli AUC</div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid #e8e8ed">
+      <div style="background:#fff;border-radius:20px;padding:26px 24px;border:1px solid var(--line)">
         <div style="font-size:36px;font-weight:600;letter-spacing:-0.03em" data-en="Vision · NLP · Forecasting">Görü · NLP · Tahmin</div>
-        <div data-en="R&amp;D focus areas" style="font-size:14px;color:#6e6e73;margin-top:6px">Ar-Ge odak alanları</div>
+        <div data-en="R&amp;D focus areas" style="font-size:14px;color:var(--muted);margin-top:6px">Ar-Ge odak alanları</div>
       </div>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
-      <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid #e8e8ed;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s">
+      <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid var(--line);opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-          <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:#2563eb;background:#eef3ff;padding:5px 11px;border-radius:980px" data-en="Vision-Language">Görü-Dil</span>
-          <span data-en="EuroSAT" style="font-size:12px;color:#86868b">EuroSAT</span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--accent);background:#eef3ff;padding:5px 11px;border-radius:980px" data-en="Vision-Language">Görü-Dil</span>
+          <span data-en="EuroSAT" style="font-size:12px;color:var(--faint)">EuroSAT</span>
         </div>
         <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px">GeoQwen-VL</h3>
-        <p data-en="A vision-language model fine-tuned for satellite &amp; aerial imagery understanding and land-cover reasoning." style="font-size:15px;line-height:1.55;color:#6e6e73">Uydu ve hava görüntüsü anlama ve arazi örtüsü çıkarımı için ince ayarlı görü-dil modeli.</p>
+        <p data-en="A vision-language model fine-tuned for satellite &amp; aerial imagery understanding and land-cover reasoning." style="font-size:15px;line-height:1.55;color:var(--muted)">Uydu ve hava görüntüsü anlama ve arazi örtüsü çıkarımı için ince ayarlı görü-dil modeli.</p>
       </article>
-      <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid #e8e8ed;opacity:0;transform:translateY(24px);transition:opacity .7s .08s,transform .7s .08s">
+      <article data-reveal style="background:#fff;border-radius:24px;padding:32px;border:1px solid var(--line);opacity:0;transform:translateY(24px);transition:opacity .7s .08s,transform .7s .08s">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-          <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:#2563eb;background:#eef3ff;padding:5px 11px;border-radius:980px" data-en="NLP · NER">NLP · NER</span>
-          <span data-en="Turkish" style="font-size:12px;color:#86868b">Türkçe</span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--accent);background:#eef3ff;padding:5px 11px;border-radius:980px" data-en="NLP · NER">NLP · NER</span>
+          <span data-en="Turkish" style="font-size:12px;color:var(--faint)">Türkçe</span>
         </div>
         <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px">MedNER-TR</h3>
-        <p data-en="Turkish medical named-entity recognition — extracting drugs, diagnoses and dosages from clinical text." style="font-size:15px;line-height:1.55;color:#6e6e73">Türkçe tıbbi varlık tanıma — klinik metinden ilaç, tanı ve dozajların çıkarılması.</p>
+        <p data-en="Turkish medical named-entity recognition — extracting drugs, diagnoses and dosages from clinical text." style="font-size:15px;line-height:1.55;color:var(--muted)">Türkçe tıbbi varlık tanıma — klinik metinden ilaç, tanı ve dozajların çıkarılması.</p>
       </article>
     </div>
   </div>
@@ -407,7 +441,7 @@
 <section id="work" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#fff">
   <div style="max-width:1180px;margin:0 auto">
     <div data-reveal style="max-width:660px;margin-bottom:56px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Our references">Referanslarımız</span></div>
+      <div class="eyebrow"><span data-en="Our references">Referanslarımız</span></div>
       <h2 data-en="Delivered, shipped, in production." style="font-size:clamp(32px,4.8vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.04">Teslim edildi, yayınlandı, sahada.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px">
@@ -423,14 +457,14 @@
         </div>
       </article>
 
-      <article data-reveal data-tilt class="work-card light-card" style="position:relative;border-radius:26px;overflow:hidden;min-height:360px;background:#f5f5f7;padding:34px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(28px);transition:opacity .7s .06s,transform .7s .06s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt class="work-card light-card" style="position:relative;border-radius:26px;overflow:hidden;min-height:360px;background:var(--surface);padding:34px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(28px);transition:opacity .7s .06s,transform .7s .06s,box-shadow .35s;will-change:transform">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <span data-en="Enterprise Software" style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:#1d1d1f;background:#fff;padding:6px 13px;border-radius:980px;box-shadow:0 2px 8px -4px rgba(0,0,0,.2)">Kurumsal Yazılım</span>
-          <span data-en="In production" style="font-size:12px;color:#6e6e73;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block"></span>Sahada</span>
+          <span data-en="Enterprise Software" style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink);background:#fff;padding:6px 13px;border-radius:980px;box-shadow:0 2px 8px -4px rgba(0,0,0,.2)">Kurumsal Yazılım</span>
+          <span data-en="In production" style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block"></span>Sahada</span>
         </div>
         <div>
           <h3 style="font-size:30px;font-weight:600;letter-spacing:-0.03em;margin-bottom:12px">BirleşikHR</h3>
-          <p data-en="An end-to-end HR web platform — personnel, leave and workflow management unified in one modern interface." style="font-size:15px;line-height:1.55;color:#6e6e73">Uçtan uca İK web platformu — personel, izin ve iş akışı yönetimi tek modern arayüzde.</p>
+          <p data-en="An end-to-end HR web platform — personnel, leave and workflow management unified in one modern interface." style="font-size:15px;line-height:1.55;color:var(--muted)">Uçtan uca İK web platformu — personel, izin ve iş akışı yönetimi tek modern arayüzde.</p>
         </div>
       </article>
 
@@ -445,14 +479,14 @@
         </div>
       </article>
 
-      <article data-reveal data-tilt class="work-card light-card" style="position:relative;border-radius:26px;overflow:hidden;min-height:360px;background:#f5f5f7;padding:34px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(28px);transition:opacity .7s .18s,transform .7s .18s,box-shadow .35s;will-change:transform">
+      <article data-reveal data-tilt class="work-card light-card" style="position:relative;border-radius:26px;overflow:hidden;min-height:360px;background:var(--surface);padding:34px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(28px);transition:opacity .7s .18s,transform .7s .18s,box-shadow .35s;will-change:transform">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <span data-en="Web Platform" style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:#1d1d1f;background:#fff;padding:6px 13px;border-radius:980px;box-shadow:0 2px 8px -4px rgba(0,0,0,.2)">Web Platformu</span>
-          <span data-en="In production" style="font-size:12px;color:#6e6e73;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block"></span>Sahada</span>
+          <span data-en="Web Platform" style="font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--ink);background:#fff;padding:6px 13px;border-radius:980px;box-shadow:0 2px 8px -4px rgba(0,0,0,.2)">Web Platformu</span>
+          <span data-en="In production" style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block"></span>Sahada</span>
         </div>
         <div>
           <h3 style="font-size:30px;font-weight:600;letter-spacing:-0.03em;margin-bottom:12px">İMO Konya</h3>
-          <p data-en="A platform for the Chamber of Civil Engineers (Konya) — member services, events and announcements in one modern, accessible experience." style="font-size:15px;line-height:1.55;color:#6e6e73">İnşaat Mühendisleri Odası (Konya) için bir platform — üye hizmetleri, etkinlikler ve duyurular tek modern, erişilebilir deneyimde.</p>
+          <p data-en="A platform for the Chamber of Civil Engineers (Konya) — member services, events and announcements in one modern, accessible experience." style="font-size:15px;line-height:1.55;color:var(--muted)">İnşaat Mühendisleri Odası (Konya) için bir platform — üye hizmetleri, etkinlikler ve duyurular tek modern, erişilebilir deneyimde.</p>
         </div>
       </article>
 
@@ -461,35 +495,35 @@
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:#f5f5f7">
+<section id="contact" style="padding:clamp(90px,11vw,150px) clamp(20px,5vw,40px);background:var(--surface)">
   <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,80px);align-items:start">
     <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:#2563eb;margin-bottom:18px"><span data-en="Get in touch">İletişime geç</span></div>
+      <div class="eyebrow"><span data-en="Get in touch">İletişime geç</span></div>
       <h2 data-en="Have a project in mind?" style="font-size:clamp(32px,4.6vw,54px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;margin-bottom:18px">Aklında bir proje mi var?</h2>
-      <p data-en="Let's create something extraordinary together." style="font-size:clamp(18px,2vw,22px);line-height:1.5;color:#6e6e73;margin-bottom:40px">Birlikte sıra dışı bir şey yaratalım.</p>
+      <p data-en="Let's create something extraordinary together." style="font-size:clamp(18px,2vw,22px);line-height:1.5;color:var(--muted);margin-bottom:40px">Birlikte sıra dışı bir şey yaratalım.</p>
       <div style="display:flex;flex-direction:column;gap:18px">
-        <a href="mailto:hello@arfhause.com" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:#1d1d1f"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid #e8e8ed;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span style="font-size:17px;font-weight:500">hello@arfhause.com</span></a>
-        <div style="display:flex;align-items:center;gap:14px;color:#1d1d1f"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid #e8e8ed;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span data-en="Turkey · working globally" style="font-size:17px;font-weight:500">Türkiye · global çalışıyoruz</span></div>
+        <a href="mailto:hello@arfhause.com" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span style="font-size:17px;font-weight:500">hello@arfhause.com</span></a>
+        <div style="display:flex;align-items:center;gap:14px;color:var(--ink)"><span style="width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span data-en="Turkey · working globally" style="font-size:17px;font-weight:500">Türkiye · global çalışıyoruz</span></div>
         <div style="display:flex;gap:10px;margin-top:8px">
-          <a href="https://www.linkedin.com/company/arfhause" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:#1d1d1f;text-decoration:none;border:1px solid #d2d2d7;border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/arfhause" target="_blank" rel="noopener" data-magnetic class="pill-outline" style="font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;border:1px solid var(--line-strong);border-radius:980px;padding:9px 16px;transition:transform .25s,border-color .2s;will-change:transform">LinkedIn</a>
         </div>
       </div>
     </div>
 
-    <form id="contact-form" data-reveal action="send-mail.php" method="post" style="background:#fff;border:1px solid #e8e8ed;border-radius:26px;padding:clamp(26px,4vw,40px);opacity:0;transform:translateY(24px);transition:opacity .8s .1s,transform .8s .1s">
+    <form id="contact-form" data-reveal action="send-mail.php" method="post" style="background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(26px,4vw,40px);opacity:0;transform:translateY(24px);transition:opacity .8s .1s,transform .8s .1s">
       <div style="display:flex;flex-direction:column;gap:18px">
-        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Name" style="font-size:13px;font-weight:600;color:#1d1d1f">Ad Soyad</span><input name="name" type="text" required style="background:#f5f5f7;border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:#1d1d1f;outline:none;transition:border-color .2s,background .2s"></label>
-        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Email" style="font-size:13px;font-weight:600;color:#1d1d1f">E-posta</span><input name="email" type="email" required style="background:#f5f5f7;border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:#1d1d1f;outline:none;transition:border-color .2s,background .2s"></label>
-        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Project type" style="font-size:13px;font-weight:600;color:#1d1d1f">Proje türü</span>
-          <select name="project-type" style="background:#f5f5f7;border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:#1d1d1f;outline:none;appearance:none;cursor:pointer;transition:border-color .2s,background .2s">
+        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Name" style="font-size:13px;font-weight:600;color:var(--ink)">Ad Soyad</span><input name="name" type="text" required style="background:var(--surface);border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,background .2s"></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Email" style="font-size:13px;font-weight:600;color:var(--ink)">E-posta</span><input name="email" type="email" required style="background:var(--surface);border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,background .2s"></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Project type" style="font-size:13px;font-weight:600;color:var(--ink)">Proje türü</span>
+          <select name="project-type" style="background:var(--surface) url(&quot;data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%20fill='none'%20stroke='%236e6e73'%20stroke-width='1.6'%3E%3Cpath%20d='M1%201.5%206%206.5%2011%201.5'/%3E%3C/svg%3E&quot;) no-repeat right 16px center;border:1px solid transparent;border-radius:13px;padding:14px 40px 14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;transition:border-color .2s,background .2s">
             <option data-en="Mobile">Mobil</option>
             <option>AI</option>
             <option data-en="Custom Software">Özel Yazılım</option>
             <option data-en="Other">Diğer</option>
           </select>
         </label>
-        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Message" style="font-size:13px;font-weight:600;color:#1d1d1f">Mesaj</span><textarea name="message" rows="4" required style="background:#f5f5f7;border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:#1d1d1f;outline:none;resize:vertical;transition:border-color .2s,background .2s"></textarea></label>
-        <button id="contact-submit" type="submit" data-magnetic style="background:#2563eb;color:#fff;font-family:inherit;font-size:16px;font-weight:500;border:none;border-radius:13px;padding:16px;cursor:pointer;transition:transform .25s,background .2s;will-change:transform"><span data-en="Send message">Mesaj gönder</span></button>
+        <label style="display:flex;flex-direction:column;gap:8px"><span data-en="Message" style="font-size:13px;font-weight:600;color:var(--ink)">Mesaj</span><textarea name="message" rows="4" required style="background:var(--surface);border:1px solid transparent;border-radius:13px;padding:14px 16px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;resize:vertical;transition:border-color .2s,background .2s"></textarea></label>
+        <button id="contact-submit" type="submit" data-magnetic style="background:var(--accent);color:#fff;font-family:inherit;font-size:16px;font-weight:500;border:none;border-radius:13px;padding:16px;cursor:pointer;transition:transform .25s,background .2s;will-change:transform"><span data-en="Send message">Mesaj gönder</span></button>
         <div id="contact-ok" data-en="Thanks — we'll be in touch shortly." style="display:none;font-size:14px;color:#2f9e6e;text-align:center;font-weight:500">Teşekkürler — en kısa sürede dönüş yapacağız.</div>
         <div id="contact-err" data-en="Something went wrong. Please email us at hello@arfhause.com." style="display:none;font-size:14px;color:#d4622a;text-align:center;font-weight:500">Bir şeyler ters gitti. Lütfen hello@arfhause.com adresine yazın.</div>
       </div>
@@ -498,18 +532,18 @@
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer style="background:#fff;border-top:1px solid #e8e8ed;padding:56px clamp(20px,5vw,40px) 40px">
+<footer style="background:#fff;border-top:1px solid var(--line);padding:56px clamp(20px,5vw,40px) 40px">
   <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
     <div style="font-size:20px;font-weight:600;letter-spacing:-0.03em">Arfhause</div>
     <div style="display:flex;gap:clamp(16px,2.5vw,30px);flex-wrap:wrap">
-      <a href="#services" data-en="Services" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Hizmetler</a>
-      <a href="#about" data-en="About" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Hakkımızda</a>
-      <a href="#research" data-en="R&amp;D" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Ar-Ge</a>
-      <a href="#work" data-en="References" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Referanslar</a>
-      <a href="#contact" data-en="Contact" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">İletişim</a>
-      <a href="privacy-policy.html" data-en="Privacy Policy" style="font-size:14px;text-decoration:none;color:#6e6e73;transition:color .2s">Gizlilik Politikası</a>
+      <a href="#services" data-en="Services" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">Hizmetler</a>
+      <a href="#about" data-en="About" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">Hakkımızda</a>
+      <a href="#research" data-en="R&amp;D" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">Ar-Ge</a>
+      <a href="#work" data-en="References" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">Referanslar</a>
+      <a href="#contact" data-en="Contact" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">İletişim</a>
+      <a href="privacy-policy.html" data-en="Privacy Policy" style="font-size:14px;text-decoration:none;color:var(--muted);transition:color .2s">Gizlilik Politikası</a>
     </div>
-    <div style="font-size:13px;color:#86868b">© 2026 Arfhause</div>
+    <div style="font-size:13px;color:var(--faint)">© 2026 Arfhause</div>
   </div>
 </footer>
 
@@ -706,7 +740,7 @@
       c.style.pointerEvents = active ? 'auto' : 'none';
     });
     dots.forEach((d, i) => {
-      d.style.background = i === idx ? '#1d1d1f' : '#d2d2d7';
+      d.style.background = i === idx ? 'var(--ink)' : 'var(--line-strong)';
       d.style.width = i === idx ? '26px' : '18px';
     });
   }
